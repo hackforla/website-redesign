@@ -1,3 +1,5 @@
-_site/
-.sass-cache/
-.jekyll-metadata
+node_modules
+dist/
+.tmp
+app.yaml
+app/_includes/svg-sprites.svg

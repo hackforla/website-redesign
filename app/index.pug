@@ -1,0 +1,86 @@
+extends /_layouts/_main.pug
+
+block content
+  header.hero
+    .hero-inner
+      h1 Hi, we’re Hack for LA
+      p.type-featured.
+        Hack for LA brings coders, designers, entrepreneurs, students, government
+        agencies, activists, and other civically engaged individuals together to
+        solve the LA region’s biggest civic challenges.
+  article.content-artice
+    header.content-header
+      h1 Title (heading 1)
+      p.lead.
+        Lead Paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+        do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+        minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat.
+    aside.content-sidebar
+      nav.internal-nav
+        ul.unstyled-list
+          each val in [1, 2, 3]
+            li
+              a(href=`#section-${val}`).js-smooth-scroll Section #{val}
+    article.content-body
+      section#section-1
+        h2 Section 1 (heading 2)
+        p.
+          Body Copy. Lorem ipsum dolor sit amet,
+          consectetur adipiscing elit, eiusmod tempor incididunt ut labore et
+          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        p.
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        h3 Heading 3
+        p.
+          #[a(href='#') This is a link], quis nostrud exercitation ullamco laboris
+          nisi ut aliquip ex ea commodo consequat.
+        h4 Heading 4
+        p.
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+          officia #[a(href='#') this is a link in hover state].
+        p.
+          #[strong Bold body copy,] quis nostrud exercitation ullamco laboris nisi.
+        ul
+          li ul item 1
+          li ul item 2
+          li ul item 3
+          li ul item 4
+          li ul item 5
+          li ul item 6
+      section#section-2
+        h2 Section 2
+        p.
+          Eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+          ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+      section#section-3
+        h2 Section 3
+        p.
+          #[em Italicized body copy sit amet,] consectetur adipiscing elit, eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+          commodo consequat.
+        ol
+          li ol item 1
+          li ol item 2
+          li ol item 3
+          li ol item 4
+          li ol item 5
+          li ol item 6
+        p.
+          Eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+          ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+        blockquote
+          p.
+            This is a block quote describing something. Lorum ipsum
+            dolor sit amet consectetur adipiscing elit, eiusmod tempor
+            incididunt.
+          cite Quoted frome somebody
+        small.
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+          nisi ut aliquip ex ea commodo consequat.

@@ -1,0 +1,11 @@
+footer.main-footer
+  .page-contain
+    block footer
+      nav.footer-nav
+        ul.inline-list.site-links
+          li
+            a(href='http://hackforla-slack.herokuapp.com/', target='_blank') Join us on Slack
+        if socialLinks
+          .social-links
+            h4.social-header.type-small Follow us
+            +social-list(socialLinks)

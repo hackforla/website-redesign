@@ -1,0 +1,9 @@
+mixin social-list(links)
+  ul.inline-list.social-list
+    each val, key in links
+      if val
+        li
+          a(href=val, target='_blank').js-social-link
+            svg.icon(class=`icon-${key.toLowerCase()}`)
+              use(xlink:href=`#icon-${key.toLowerCase()}`)
+            span.sr-only= key

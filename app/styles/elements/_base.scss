@@ -1,0 +1,51 @@
+html {
+  box-sizing: border-box;
+}
+
+// sass-lint:disable no-universal-selectors
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+// sass-lint:enable no-universal-selectors
+
+html,
+body {
+  $color-text-shadow: rgba($color-black, .01);
+
+  // These are non-standard attributes and not prefixed by the postprocessror.
+  // sass-lint:disable no-vendor-prefixes
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  // sass-lint:enable no-vendor-prefixes
+  background: $color-white;
+  color: $color-black;
+  height: auto;
+  margin: 0;
+  min-height: 100%;
+  padding: 0;
+  text-shadow: $color-text-shadow 0 0 1px; // Text anti-aliasing..
+}
+
+// for IE < 11, see:
+// <http://caniuse.com/#feat=hidden>
+[hidden] {
+  display: none !important; // sass-lint:disable-line no-important
+}
+
+// sass-lint:disable max-line-length
+/**
+ * Fix for IE <= 11 where use elements within svgs would swallow click events
+ * and prevent the event from propagating up. See:
+ * https://connect.microsoft.com/IE/feedback/details/796745/mouse-events-are-not-delivered-at-all-anymore-when-inside-an-svg-a-use-is-removed-from-the-dom
+ */
+// sass-lint:enable max-line-length
+use {
+  pointer-events: none;
+}
+
+// Responsive images.
+img {
+  max-width: 100%;
+}

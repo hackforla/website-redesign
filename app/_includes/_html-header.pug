@@ -1,0 +1,39 @@
+head
+  meta(charset='utf-8')
+  meta(http-equiv='X-UA-Compatible', content='IE=edge')
+  meta(name='viewport', content='width=device-width, initial-scale=1')
+  title #{siteName} | #{meta.pageTitle}
+  meta(content=meta.pageTitle, property='og:title')
+  meta(content=siteName, property='og:site_name')
+  meta(content=meta.description, property='og:description')
+  meta(content=meta.image, property='og:image')
+  meta(content=canonicalUrl, property='og:url')
+  link(rel='canonical', href=canonicalUrl)
+
+  // Disable tap highlight on IE
+  meta(name='msapplication-tap-highlight', content='no')
+
+  // Web Application Manifest
+  link(rel='manifest', href='/manifest.json')
+
+  // Add to homescreen for Chrome on Android
+  meta(name='mobile-web-app-capable', content='yes')
+  meta(name='application-name', content=siteName)
+  link(rel='icon', sizes='192x192', href='/images/touch/chrome-touch-icon-192x192.png')
+
+  // Add to homescreen for Safari on iOS
+  meta(name='apple-mobile-web-app-capable', content='yes')
+  meta(name='apple-mobile-web-app-status-bar-style' content='black')
+  meta(name='apple-mobile-web-app-title', content=siteName)
+  link(rel='apple-touch-icon', href='/images/touch/apple-touch-icon.png')
+
+  // Tile icon for Win8 (144x144 + tile color)
+  meta(name='msapplication-TileImage', content='/images/touch/ms-touch-icon-144x144-precomposed.png')
+  meta(name='msapplication-TileColor', content=themeColor)
+
+  // Color the status bar on mobile devices
+  meta(name='theme-color', content=themeColor)
+
+  // Stylesheets
+  link(href='https://fonts.googleapis.com/css?family=Roboto:400,400i|Roboto+Condensed:700', rel='stylesheet')
+  link(href='/styles/main.css', rel='stylesheet')
