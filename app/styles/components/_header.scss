@@ -21,8 +21,8 @@
   .logo-image {
     display: block;
     margin: 10px;
-    width: 50px;
     transition: all 150ms ease;
+    width: 50px;
 
     @media #{$bp-tablet-up} {
       margin: 15px;

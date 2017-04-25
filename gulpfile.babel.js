@@ -1,5 +1,6 @@
 'use strict';
 
+import babelify from 'babelify';
 import browserify from 'browserify';
 import path from 'path';
 import gulp from 'gulp';
@@ -118,57 +119,24 @@ gulp.task('styles', () => {
 });
 
 // This uses babelify to compile ES6 modules and transpile them to ES5.
-// TODO(jjandoc): The sourcemaps aren't gnerating correctly. Need to figure out
-// what's going on with them.
 gulp.task('scripts', () => {
   const b = browserify({
     entries: `${src}/scripts/main.js`,
     debug: true,
-    paths: ['node_modules', `${src}/scripts`]
+    paths: ['node_modules', `${src}/scripts`],
+    transform: [babelify]
   });
 
-  return b.transform('babelify', {
-    presets: ['es2015']
-  })
-  .bundle()
+  return b.bundle()
   .pipe(sourcestream('main.js'))
   .pipe(buffer())
-  .pipe(gulp.dest(`${dist}/scripts`))
-  .pipe(gulp.dest(`.tmp/scripts`))
-  .pipe($.sourcemaps.init())
+  .pipe($.sourcemaps.init({loadMaps: true}))
   .pipe($.uglify())
   .pipe($.sourcemaps.write('.'))
-  .pipe($.rename('main.min.js'))
   .pipe(gulp.dest(`${dist}/scripts`))
   .pipe(gulp.dest(`.tmp/scripts`))
   .pipe($.size({title: 'scripts'}));
 });
-/* Commenting out the Web Starter Kit script task.
-// Concatenate and minify JavaScript. Optionally transpiles ES2015 code to ES5.
-// to enable ES2015 support remove the line `"only": "gulpfile.babel.js",` in the
-// `.babelrc` file.
-gulp.task('scripts', () =>
-    gulp.src([
-      // Note: Since we are not using useref in the scripts build pipeline,
-      //       you need to explicitly list your scripts here in the right order
-      //       to be correctly concatenated
-      `./${src}/scripts/main.js`
-      // Other scripts
-    ])
-      .pipe($.newer('.tmp/scripts'))
-      .pipe($.sourcemaps.init())
-      .pipe($.babel())
-      .pipe($.sourcemaps.write())
-      .pipe(gulp.dest('.tmp/scripts'))
-      .pipe($.concat('main.min.js'))
-      .pipe($.uglify({preserveComments: 'some'}))
-      // Output files
-      .pipe($.size({title: 'scripts'}))
-      .pipe($.sourcemaps.write('.'))
-      .pipe(gulp.dest(`${dist}/scripts`))
-      .pipe(gulp.dest('.tmp/scripts'))
-);
-*/
 
 // HTML Minification optionsThis is pretty aggressive, difficult to read,
 // and can look wrong to some people (i.e. this won't close body and html

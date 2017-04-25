@@ -3,7 +3,6 @@ $nav-width: 240px;
 .header-nav {
   @include position(fixed, 0 (-$nav-width) 0 null);
   background-color: $color-grey-light;
-
   padding: 30px;
   width: $nav-width;
 
@@ -14,8 +13,8 @@ $nav-width: 240px;
     width: auto;
 
     ul {
-      justify-content: flex-end;
       display: flex;
+      justify-content: flex-end;
       margin-right: 20px;
     }
 
