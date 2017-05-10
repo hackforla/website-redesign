@@ -3,8 +3,8 @@
   background-size: cover;
   display: flex;
   flex-direction: column;
-  height: 100vh;
   justify-content: center;
+  min-height: 100vh;
   padding: 20px;
   position: relative;
 
@@ -13,17 +13,22 @@
     background: $color-black;
     content: '';
     display: block;
-    opacity: .15;
+    opacity: .2;
     z-index: 1;
   }
 }
 
 .hero-inner {
   color: $color-white;
-  margin-top: 60px;
+  margin: 60px auto 20px;
   max-width: $max-content-width;
   position: relative;
   z-index: 2;
+
+  @media #{$bp-tablet-up} {
+    margin-bottom: 50px;
+    margin-top: 150px;
+  }
 
   h1,
   p {

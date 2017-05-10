@@ -1,86 +1,141 @@
 extends /_layouts/_main.pug
 
-block content
+block precontent
   header.hero
     .hero-inner
-      h1 Hi, we’re Hack for LA
+      h1 You can change L.A. for the better
       p.type-featured.
-        Hack for LA brings coders, designers, entrepreneurs, students, government
-        agencies, activists, and other civically engaged individuals together to
-        solve the LA region’s biggest civic challenges.
-  article.content-artice
-    header.content-header
-      h1 Title (heading 1)
-      p.lead.
-        Lead Paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-        do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-        minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat.
-    aside.content-sidebar
-      nav.internal-nav
-        ul.unstyled-list
-          each val in [1, 2, 3]
-            li
-              a(href=`#section-${val}`).js-smooth-scroll Section #{val}
-    article.content-body
-      section#section-1
-        h2 Section 1 (heading 2)
+        Can you design, write, or code? Are you an activist with an idea?
+        You can help L.A. live up to its potential
+        through Hack for LA. Everyone is welcome!
+      form.hero-signup(action='#', method='post')
+        label(for='hero-signup') Sign up to learn more
+        input(type='email',
+          name='email',
+          placeholder='Email address')#hero-signup
+        button(type='submit').btn.btn-primary Submit
+
+block content
+  section#hack-nights.content-section
+    .section-inner.page-contain
+      .section-body
+        h2 Hack Nights
         p.
-          Body Copy. Lorem ipsum dolor sit amet,
-          consectetur adipiscing elit, eiusmod tempor incididunt ut labore et
-          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          At our weekly Hack Nights, we organize groups of volunteers to build
+          technology addressing the LA region's biggest civic issues. Join an
+          existing project team or pitch your own civic issue.
+        p
+          address.
+            LaKretz Innovation Center#[br]
+            Room 402#[br]
+            525 S Hewitt St#[br]
+            Los Angeles, CA 90013
+        p
+          a(href='http://hackforla-slack.herokuapp.com/') Join us on Slack
+      aside.section-aside
+        img(src='http://placehold.it/600x400')
+
+  -
+    var projects = [
+      {
+        title: 'Food Oasis',
+        description: 'Everyone deserves access to healthy food. Help us make it easier for Angelenos to find the best places to buy or grow healthy food in their city.',
+        links: {
+          'Gitnhub': 'https://github.com/foodoasisla',
+          'Site': 'https://foodoasis.la/',
+        },
+        status: 'beta',
+        parter: 'LA Food Policy Council',
+        needs: 'Java Developers, Designers, Writers',
+        img: 'http://placehold.it/600x400',
+        featured: true
+      },
+      {
+        title: 'Work for LA',
+        description: 'Applying for work should be simple—but the application process for the City of LA is confusing. We’re going to make it easier to follow.',
+        links: {
+          'Github': '',
+          'Site': 'http://www.workfor.la/',
+        },
+        status: 'planning',
+        needs: 'UX, Writers, Designers',
+        img: 'http://placehold.it/600x400',
+      },
+      {
+        title: 'Adopt-A-Civic Artwork',
+        description: 'There are thousands of works of public art scattered around the city. There should be one place to see where they are and how they’re doing. We’re building it.',
+        links: {
+          'Github': 'https://github.com/hackforla/adopt-civic-art',
+        },
+        status: 'planning',
+        needs: 'UX, Designers, Python',
+        img: 'http://placehold.it/600x400',
+      },
+      {
+        title: 'Curb Map',
+        description: 'We’re going to build an iOS and Android app that will tell you where and when you can park in the city—all based on your location. Come drive with us.',
+        links: {
+          'Github': ''
+        },
+        status: 'planning',
+        needs: 'Designers, Python',
+        img: 'http://placehold.it/600x400',
+      }
+    ]
+
+  section#projects.content-section
+    .section-inner.page-contain
+      .section-body-full
+        h2 Current Projects
+      ul.project-list.unstyled-list
+        each item in projects
+          li(class={featured: item.featured}).project-card
+            .project-tmb
+              img(src=item.img).project-tmb-img
+            .project-body
+              h3.project-title= item.title
+              p.project-description= item.description
+              p.project-needs Looking for: #{item.needs}
+              ul.inline-list.project-links
+                each link, key in item.links
+                  li
+                    a(href=link)= key
+      .section-body-full
+        p.project-pitch
+          a(href='#') Have an idea? Submit your pitch
+
+  section#impact.content-section
+    .section-inner.page-contain
+      .impact-stat
+        .impact-large 4
+        p Active projects
+      .impact-stat
+        .impact-large 45%
+        p Women hackers
+      .impact-stat
+        .impact-large XX
+        p Some stat here!
+
+  section#news.content-section
+    .section-inner.page-contain
+      .section-body-full
+        h2 In the News
         p.
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        h3 Heading 3
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+  section#about.content-section
+    .section-inner.page-contain
+      .section-body-full
+        h2 About Us
         p.
-          #[a(href='#') This is a link], quis nostrud exercitation ullamco laboris
-          nisi ut aliquip ex ea commodo consequat.
-        h4 Heading 4
+          Hack for LA is the official Los Angeles chapter of Code for America, a national nonprofit that believes government can work for the people, by the people, in the 21st century. We bring together coders, designers, entrepreneurs, students, government staff, activists, and other civically engaged individuals to solve the LA region’s biggest civic challenges.
         p.
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-          officia #[a(href='#') this is a link in hover state].
-        p.
-          #[strong Bold body copy,] quis nostrud exercitation ullamco laboris nisi.
-        ul
-          li ul item 1
-          li ul item 2
-          li ul item 3
-          li ul item 4
-          li ul item 5
-          li ul item 6
-      section#section-2
-        h2 Section 2
-        p.
-          Eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-          ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
-      section#section-3
-        h2 Section 3
-        p.
-          #[em Italicized body copy sit amet,] consectetur adipiscing elit, eiusmod tempor
-          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-          commodo consequat.
-        ol
-          li ol item 1
-          li ol item 2
-          li ol item 3
-          li ol item 4
-          li ol item 5
-          li ol item 6
-        p.
-          Eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-          ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
-        blockquote
-          p.
-            This is a block quote describing something. Lorum ipsum
-            dolor sit amet consectetur adipiscing elit, eiusmod tempor
-            incididunt.
-          cite Quoted frome somebody
-        small.
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-          nisi ut aliquip ex ea commodo consequat.
+          Are you press and want to get in touch? Are you interested in becoming a sponsor? Want to just check us out on Slack? Looking to volunteer?
+        a(href='#').btn.btn-primary Contact us
+
+  section#sponsors.content-section
+    .section-inner.page-contain
+      .section-body-full
+        h2 Sponsors
+        .sponsor-garden
+          em sponsor logos go here
