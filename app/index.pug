@@ -26,28 +26,28 @@ block content
           existing project team or pitch your own civic issue.
         p
           address.
-            LaKretz Innovation Center#[br]
+            La Kretz Innovation Center#[br]
             Room 402#[br]
             525 S Hewitt St#[br]
             Los Angeles, CA 90013
         p
           a(href='http://hackforla-slack.herokuapp.com/') Join us on Slack
       aside.section-aside
-        img(src='http://placehold.it/600x400')
+        img(src='/images/la-kretz.jpg', alt='Exterior photo of La Kretz Innovation Center')
 
   -
-    var projects = [
+    const projects = [
       {
         title: 'Food Oasis',
         description: 'Everyone deserves access to healthy food. Help us make it easier for Angelenos to find the best places to buy or grow healthy food in their city.',
         links: {
-          'Gitnhub': 'https://github.com/foodoasisla',
+          'Github': 'https://github.com/foodoasisla',
           'Site': 'https://foodoasis.la/',
         },
         status: 'beta',
         parter: 'LA Food Policy Council',
         needs: 'Java Developers, Designers, Writers',
-        img: 'http://placehold.it/600x400',
+        img: '/images/project-fola.jpg',
         featured: true
       },
       {
@@ -59,7 +59,7 @@ block content
         },
         status: 'planning',
         needs: 'UX, Writers, Designers',
-        img: 'http://placehold.it/600x400',
+        img: '/images/workforla.jpg',
       },
       {
         title: 'Adopt-A-Civic Artwork',
@@ -90,16 +90,17 @@ block content
       ul.project-list.unstyled-list
         each item in projects
           li(class={featured: item.featured}).project-card
-            .project-tmb
-              img(src=item.img).project-tmb-img
-            .project-body
-              h3.project-title= item.title
-              p.project-description= item.description
-              p.project-needs Looking for: #{item.needs}
-              ul.inline-list.project-links
-                each link, key in item.links
-                  li
-                    a(href=link)= key
+            .project-card-inner
+              .project-tmb
+                img(src=item.img).project-tmb-img
+              .project-body
+                h3.project-title= item.title
+                p.project-description= item.description
+                p.project-needs Looking for: #{item.needs}
+                ul.inline-list.project-links
+                  each link, key in item.links
+                    li
+                      a(href=link, target='_blank')= key
       .section-body-full
         p.project-pitch
           a(href='#') Have an idea? Submit your pitch
@@ -138,4 +139,10 @@ block content
       .section-body-full
         h2 Sponsors
         .sponsor-garden
-          em sponsor logos go here
+          ul.inline-list
+            li.sponsor-logo
+              a(href='https://www.codeforamerica.org/')
+                img(src='/images/logo-cfa.svg', alt='Code for America', target='_blank')
+            li.sponsor-logo
+              a(href='http://laincubator.org/')
+                img(src='/images/logo-laci.svg', alt='Los Angeles Cleantech Incubator', target='_blank')

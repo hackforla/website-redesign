@@ -17,8 +17,13 @@
   margin: 0 auto;
   max-width: $max-content-width;
 }
+
 .section-inner {
   @include grid-container;
+}
+
+.content-section {
+  margin-bottom: 60px;
 }
 
 .section-body-full,
@@ -26,6 +31,16 @@
 .section-body,
 .project-card {
   @include grid-column(12);
+}
+
+.project-card {
+  margin-bottom: 20px;
+}
+
+.sponsor-logo {
+  img {
+    height: 70px;
+  }
 }
 
 @media #{$bp-tablet-up} {
@@ -42,8 +57,11 @@
     @include grid-column(4);
 
     &.featured {
-      @include grid-container;
       @include grid-column(12);
+
+      .project-card-inner {
+        @include grid-collapse;
+      }
 
       .project-body {
         @include grid-column(8);

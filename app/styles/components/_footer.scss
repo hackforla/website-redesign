@@ -1,7 +1,13 @@
 .main-footer {
-  background: $color-papayawhip;
+  background: $color-black;
+  color: $color-white;
   margin-top: 50px;
   padding: 30px 0;
+
+  a {
+    color: $color-white;
+    text-decoration: none;
+  }
 }
 
 .footer-nav {
