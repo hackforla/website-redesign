@@ -3,35 +3,47 @@ extends /_layouts/_main.pug
 block precontent
   header.hero
     .hero-inner
-      h1 You can change L.A. for the better
+      h1 You can change LA for the better
       p.type-featured.
-        Can you design, write, or code? Are you an activist with an idea?
-        You can help L.A. live up to its potential
-        through Hack for LA. Everyone is welcome!
+        Can you design, write, or code? Are you an activist with an idea? You
+        can help Los Angeles live up to its potential at Hack for LA. Everyone
+        is welcome!
       form.hero-signup(action='#', method='post')
-        label(for='hero-signup') Sign up to learn more
+        label(for='hero-signup') Get Updates
         input(type='email',
           name='email',
           placeholder='Email address')#hero-signup
-        button(type='submit').btn.btn-primary Submit
+        button(type='submit').btn.btn-primary Sign Up
 
 block content
   section#hack-nights.content-section
     .section-inner.page-contain
       .section-body
-        h2 Hack Nights
+        h2 Hack Nights - Every Tuesday & Thursday
         p.
-          At our weekly Hack Nights, we organize groups of volunteers to build
-          technology addressing the LA region's biggest civic issues. Join an
-          existing project team or pitch your own civic issue.
+          We host weekly Hack Nights in Downtown Los Angeles and Santa Monica.
+          We organize groups of volunteers to build technology addressing the
+          LA region's biggest civic issues. Join an existing project team or
+          pitch your own civic issue.
         p
+          strong Downtown - Tuesdays at 6:30 pm
           address.
             La Kretz Innovation Center#[br]
             Room 402#[br]
             525 S Hewitt St#[br]
             Los Angeles, CA 90013
         p
-          a(href='http://hackforla-slack.herokuapp.com/') Join us on Slack
+          strong Westside - Thursdays at 6:30 pm
+          address.
+            Westside - Thursdays at 6:30 pm#[br]
+            Santa Monica Public Library#[br]
+            601 Santa Monica Blvd#[br]
+            Santa Monica, CA 90401
+        p
+          a(href='https://www.meetup.com/hackforla/',
+            target='_blank').btn.btn-primary RSVP on Meetup
+          a(href='http://hackforla-slack.herokuapp.com/',
+            target='_blank').btn.btn-primary Join us on Slack
       aside.section-aside
         img(src='/images/la-kretz.jpg', alt='Exterior photo of La Kretz Innovation Center')
 
@@ -44,22 +56,23 @@ block content
           'Github': 'https://github.com/foodoasisla',
           'Site': 'https://foodoasis.la/',
         },
-        status: 'beta',
-        parter: 'LA Food Policy Council',
+        partner: 'LA Food Policy Council',
         needs: 'Java Developers, Designers, Writers',
         img: '/images/project-fola.jpg',
-        featured: true
+        featured: true,
+        location: 'Downtown',
       },
       {
         title: 'Work for LA',
-        description: 'Applying for work should be simple—but the application process for the City of LA is confusing. We’re going to make it easier to follow.',
+        description: 'Applying for work should be simple—but the application process for the City of LA is confusing and cumbersome. We’re going to make it easier to find the job of your dreams.',
         links: {
           'Github': '',
           'Site': 'http://www.workfor.la/',
         },
-        status: 'planning',
+        partner: 'Department of Personnel',
         needs: 'UX, Writers, Designers',
         img: '/images/project-workforla.jpg',
+        location: 'Downtown',
       },
       {
         title: 'Adopt-A-Civic Artwork',
@@ -67,9 +80,9 @@ block content
         links: {
           'Github': 'https://github.com/hackforla/adopt-civic-art',
         },
-        status: 'planning',
         needs: 'UX, Designers, Python',
         img: 'http://placehold.it/600x400',
+        location: 'Downtown',
       },
       {
         title: 'Curb Map',
@@ -77,9 +90,20 @@ block content
         links: {
           'Github': ''
         },
-        status: 'planning',
         needs: 'Designers, Python',
         img: 'http://placehold.it/600x400',
+        location: 'Downtown',
+      },
+      {
+        title: 'DOT Planner',
+        description: 'We are mapping out all of the city projects that are making it easier to get around Los Angeles—road improvements, bike lanes, metro expansion, and way more.',
+        links: {
+          'Github': ''
+        },
+        partner: 'DOT',
+        needs: 'Designers',
+        img: 'http://placehold.it/600x400',
+        location: 'Downtown',
       }
     ]
 
@@ -108,31 +132,66 @@ block content
   section#impact.content-section
     .section-inner.page-contain
       .impact-stat
-        .impact-large 4
-        p Active projects
+        .impact-large 3,000
+        p People
       .impact-stat
-        .impact-large 45%
+        .impact-large 50%
         p Women hackers
       .impact-stat
-        .impact-large XX
-        p Some stat here!
+        .impact-large 50%
+        p People of color
 
-  section#news.content-section
+  -
+    const news = [
+      {
+        title: 'Why LA’s Tech Community is Trying to Hack Hunger',
+        publication: 'CNN',
+        img: 'http://placehold.it/600x400',
+        url: 'http://money.cnn.com/2017/04/19/technology/la-food-deserts/'
+      },
+      {
+        title: `At L.A. 'hackathon,' civic-minded coders aim to put city data to good use`,
+        publication: 'LA Times',
+        img: 'http://placehold.it/600x400',
+        url: 'http://www.latimes.com/local/california/la-me-hackathon-20150607-story.html'
+      },
+      {
+        title: 'March 4 Declared “Open Data Day” in Los Angeles',
+        publication: 'GovTech',
+        img: 'http://placehold.it/600x400',
+        url: 'http://www.govtech.com/dc/articles/March-4-Declared-Open-Data-Day-in-Los-Angeles-Cities-Worldwide.html'
+      }
+    ]
+  section#press.content-section
     .section-inner.page-contain
       .section-body-full
-        h2 In the News
-        p.
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        h2 Featured News
+        ul
+          each item in news
+            li.news-card
+              .news-card-inner
+                .news-tmb
+                  img(src=item.img).news-tmb-img
+                .news-body
+                  a(href=item.url)
+                    h3.news-title= item.title
+                  p
+                    em= item.publication
 
   section#about.content-section
     .section-inner.page-contain
       .section-body-full
-        h2 About Us
+        h2 Want to know more about Hack for LA?
         p.
-          Hack for LA is the official Los Angeles chapter of Code for America, a national nonprofit that believes government can work for the people, by the people, in the 21st century. We bring together coders, designers, entrepreneurs, students, government staff, activists, and other civically engaged individuals to solve the LA region’s biggest civic challenges.
+          Hack for LA is the official Los Angeles chapter of Code for America, a national nonprofit that believes government can work for the people, by the people, in the 21st century. We bring together coders, designers, entrepreneurs, students, government staff, activists, and other civic-minded people to solve the LA region’s biggest civic challenges.
+        h3 Contact Us
         p.
           Are you press and want to get in touch? Are you interested in becoming a sponsor? Want to just check us out on Slack? Looking to volunteer?
-        a(href='#').btn.btn-primary Contact us
+        form
+          textarea(placeholder='Send us a message')
+          button(type='submit').btn.btn-primary Send
+        a(href='http://hackforla-slack.herokuapp.com/',
+          target='_blank').btn.btn-primary Join us on Slack
 
   section#sponsors.content-section
     .section-inner.page-contain
