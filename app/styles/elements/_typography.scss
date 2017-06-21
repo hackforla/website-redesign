@@ -1,8 +1,9 @@
 html,
 body {
-  font: #{map-get($font-size-base, mobile)} /
-  #{map-get($line-height-base, mobile)}
-  map-get($font-family, body);
+  font:
+    #{map-get($font-size-base, mobile)} /
+    #{map-get($line-height-base, mobile)}
+    map-get($font-family, body);
 }
 
 h1,
@@ -19,45 +20,51 @@ ol {
 
 h1,
 .type-h1 {
-  font: map-get($font-weight, bold)
-  #{map-get($font-size-h1, mobile)} / #{map-get($line-height-h1, mobile)}
-  map-get($font-family, decorative);
+  font:
+    map-get($font-weight, bold)
+    #{map-get($font-size-h1, mobile)} / #{map-get($line-height-h1, mobile)}
+    map-get($font-family, decorative);
 }
 
 h2,
 .type-h2 {
-  font: map-get($font-weight, bold)
-  #{map-get($font-size-h2, mobile)} / #{map-get($line-height-h2, mobile)}
-  map-get($font-family, decorative);
+  font:
+    map-get($font-weight, bold)
+    #{map-get($font-size-h2, mobile)} / #{map-get($line-height-h2, mobile)}
+    map-get($font-family, decorative);
 }
 
 h3,
 .type-h3 {
-  font: map-get($font-weight, bold)
-  #{map-get($font-size-h3, mobile)} / #{map-get($line-height-h3, mobile)}
-  map-get($font-family, decorative);
+  font:
+    map-get($font-weight, bold)
+    #{map-get($font-size-h3, mobile)} / #{map-get($line-height-h3, mobile)}
+    map-get($font-family, decorative);
 }
 
 h4,
 .type-h4 {
-  font: map-get($font-weight, bold)
-  #{map-get($font-size-h4, mobile)} / #{map-get($line-height-h4, mobile)}
-  map-get($font-family, decorative);
+  font:
+    map-get($font-weight, bold)
+    #{map-get($font-size-h4, mobile)} / #{map-get($line-height-h4, mobile)}
+    map-get($font-family, decorative);
 }
 
 blockquote p,
 .type-featured {
-  font: map-get($font-weight, bold)
-  #{map-get($font-size-blockquote, mobile)} /
-  #{map-get($line-height-blockquote, mobile)}
-  map-get($font-family, body);
+  font:
+    map-get($font-weight, bold)
+    #{map-get($font-size-blockquote, mobile)} /
+    #{map-get($line-height-blockquote, mobile)}
+    map-get($font-family, body);
 }
 
 small,
 .type-small {
-  font: #{map-get($font-size-small, mobile)} /
-  #{map-get($line-height-small, mobile)}
-  map-get($font-family, body);
+  font:
+    #{map-get($font-size-small, mobile)} /
+    #{map-get($line-height-small, mobile)}
+    map-get($font-family, body);
 }
 
 @media #{$bp-tablet-up} {

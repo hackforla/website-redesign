@@ -6,6 +6,8 @@
   @include sr-only-focusable();
 }
 
+/* stylelint-disable declaration-no-important */
 .hidden {
-  display: none !important; // sass-lint:disable-line no-important
+  display: none !important;
 }
+/* stylelint-enable */
