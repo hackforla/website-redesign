@@ -1,0 +1,19 @@
+{
+  "extends": "stylelint-config-standard",
+	"plugins": [
+		"stylelint-order"
+	],
+	"rules": {
+		"declaration-empty-line-before": "never",
+		"declaration-no-important": true,
+		"max-line-length": [80, {
+  		ignore: ["comments"]
+		}],
+		"number-leading-zero": "never",
+		"order/order": [
+			"custom-properties",
+			"declarations"
+		],
+		"order/properties-alphabetical-order": true,
+	}
+}

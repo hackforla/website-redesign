@@ -36,7 +36,6 @@ gulp.task('lint', () =>
     '!node_modules/**'
   ]).pipe($.eslint())
   .pipe($.eslint.format())
-  .pipe($.if(!browserSync.active, $.eslint.failAfterError()))
 );
 
 // Optimize images
@@ -69,6 +68,9 @@ gulp.task('copy', () =>
   gulp.src([
     `${src}/**/*`,
     `!${src}/_*`,
+    `!${src}/images`,
+    `!${src}/scripts`,
+    `!${src}/styles`,
     `!${src}/**/*.pug`,
     `!${src}/**/*.md`
     // Uncomment the next line if you need a basic htaccess file.
@@ -79,8 +81,23 @@ gulp.task('copy', () =>
     .pipe($.size({title: 'copy'}))
 );
 
+// Lint sass files.
+// Styles
+gulp.task('stylelint', function() {
+  return gulp.src([
+    `${src}/styles/**/*.s+(a|c)ss`,
+    `${src}/styles/**/*.css`,
+    `!${src}/styles/vendor/**`,
+  ])
+  .pipe($.stylelint({
+    reporters: [
+      {formatter: 'string', console: true},
+    ],
+  }));
+});
+
 // Compile and automatically prefix stylesheets
-gulp.task('styles', () => {
+gulp.task('styles', ['stylelint'], () => {
   const AUTOPREFIXER_BROWSERS = [
     'ie >= 10',
     'ie_mob >= 10',
@@ -95,12 +112,9 @@ gulp.task('styles', () => {
 
   // For best performance, don't add Sass partials to `gulp.src`
   return gulp.src([
-    `${src}/styles/**/*.scss`
+    `${src}/styles/main.scss`
   ])
     .pipe($.newer('.tmp/styles'))
-    .pipe($.sassLint())
-    .pipe($.sassLint.format())
-    .pipe($.sassLint.failOnError())
     .pipe($.sourcemaps.init())
     .pipe($.sass({
       includePaths: ['node_modules']
@@ -175,10 +189,10 @@ gulp.task('markdown', () => {
   .pipe($.markdownToJson(marked))
   .pipe($.wrap(data =>
       fs.readFileSync(`${src}/${data.contents.template}`).toString(), {}, {
-        basedir: 'app',
-        engine: 'pug',
-        pretty: true
-      }))
+    basedir: 'app',
+    engine: 'pug',
+    pretty: true
+  }))
   .pipe($.rename({extname: '.html'}))
   .pipe(gulp.dest('.tmp'))
   .pipe($.htmlmin(minificationOptions))
@@ -254,7 +268,8 @@ gulp.task('pagespeed', cb =>
   }, cb)
 );
 
-// Copy over the scripts that are used in importScripts as part of the generate-service-worker task.
+// Copy over the scripts that are used in importScripts as part of the
+// generate-service-worker task.
 gulp.task('copy-sw-scripts', () => {
   return gulp.src([
     'node_modules/sw-toolbox/sw-toolbox.js',
@@ -274,7 +289,8 @@ gulp.task('generate-service-worker', ['copy-sw-scripts'], () => {
   return swPrecache.write(filepath, {
     // Used to avoid cache conflicts when serving on localhost.
     cacheId: pkg.name || 'web-starter-kit',
-    // sw-toolbox.js needs to be listed first. It sets up methods used in runtime-caching.js.
+    // sw-toolbox.js needs to be listed first. It sets up methods used in
+    // runtime-caching.js.
     importScripts: [
       'scripts/sw/sw-toolbox.js',
       'scripts/sw/runtime-caching.js'
