@@ -1,13 +1,8 @@
 header.main-header
   .main-header-content
-    a(href='/').branding
-      img(src='/images/logo.svg').logo-image
-      span.sr-only Hack for L.A.
-    button(type='button').nav-toggle.js-toggle-nav
-      svg.icon.icon-hamburger
-        use(xlink:href='#icon-hamburger')
-    nav.header-nav.type-h4
-      ul.unstyled-list
+    .branding Hack for LA
+    nav.header-nav
+      ul.inline-list
         li
           a(href='#hack-nights').js-smooth-scroll Hack Nights
         li
@@ -15,4 +10,7 @@ header.main-header
         li
           a(href='#press').js-smooth-scroll Press
         li
-          a(href='#about').js-smooth-scroll About Us
+          a(href='#about').js-smooth-scroll About
+    if socialLinks
+      .social-links
+        +social-list(socialLinks)

@@ -1,54 +1,40 @@
 .main-header {
-  @include clearfix;
-  @include position(fixed, 0 0 null 0);
-  background: $color-black;
-  color: $color-white;
-  margin-bottom: 50px;
-  padding: 10px;
+  @include position(absolute, 0 0 null 0);
+  font-weight: map-get($font-weight, bold);
+  padding: 20px;
   z-index: 10;
 
-  @media #{$bp-tablet-up} {
-    padding: 20px;
-  }
+  .social-links {
+    flex-grow: 1;
+    text-align: right;
 
-  .branding {
-    @include position(absolute, 0 null null 20px);
-    background: $color-white;
-    box-shadow: $color-black 0 0 2px;
-    display: inline-block;
-  }
+    li {
+      margin-right: 20px;
 
-  .logo-image {
-    display: block;
-    margin: 10px;
-    transition: all 150ms ease;
-    width: 50px;
-
-    @media #{$bp-tablet-up} {
-      margin: 15px;
-      width: 70px;
-
-      .scroll-top & {
-        margin: 20px;
-        width: 100px;
+      &:last-child {
+        margin-right: 0;
       }
+    }
+
+    a {
+      color: $color-white;
+    }
+  }
+
+  @media #{$bp-tablet-up} {
+    @include clearfix;
+    background: $color-red;
+    margin-bottom: 50px;
+    padding: 10px;
+    position: fixed;
+
+    .social-links {
+      flex-grow: 0;
     }
   }
 }
 
-.nav-toggle {
-  background: none;
-  border: 0;
-  color: $color-white;
-  float: right;
-  margin-right: 10px;
-
-  .icon {
-    @include size(24px);
-    display: block;
-  }
-
-  @media #{$bp-tablet-up} {
-    display: none;
-  }
+.main-header-content {
+  display: flex;
 }
+
