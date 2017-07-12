@@ -3,8 +3,7 @@
   background-size: cover;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  margin-bottom: 60px;
+  justify-content: flex-end;
   min-height: 100vh;
   padding: 20px;
   position: relative;
@@ -31,22 +30,27 @@
     margin-top: 150px;
   }
 
-  h1,
-  p {
-    max-width: 840px;
-  }
-
   h1 {
-    font-size: 4rem;
+    font-size: 2.5rem;
     margin-bottom: 0;
 
     @media #{$bp-tablet-up} {
-      font-size: 5rem;
-    }
-
-    @media #{$bp-desktop-up} {
-      font-size: 6rem;
+      font-size: 3rem;
     }
   }
 }
 
+.hero-signup {
+  .form-input {
+    max-width: 310px;
+    width: 100%;
+  }
+
+  @media #{$bp-tablet-up} {
+    display: flex;
+
+    .form-input {
+      margin-right: 10px;
+    }
+  }
+}

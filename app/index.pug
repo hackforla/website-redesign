@@ -9,43 +9,46 @@ block precontent
         can help Los Angeles live up to its potential at Hack for LA. Everyone
         is welcome!
       form.hero-signup(action='#', method='post')
-        label(for='hero-signup').sr-only Enter you email address
-        input(type='email',
-          name='email',
-          placeholder='Enter you email address')#hero-signup
+        .form-input
+          label(for='hero-signup').sr-only Enter you email address
+          input(type='email',
+            name='email',
+            placeholder='Enter you email address')#hero-signup
         button(type='submit').btn.btn-primary Sign up for updates
 
 block content
-  section#hack-nights.content-section
-    .section-inner.page-contain
-      .section-body
-        h2 Hack Nights - Every Tuesday & Thursday
-        p.
-          We host weekly Hack Nights in Downtown Los Angeles and Santa Monica.
-          We organize groups of volunteers to build technology addressing the
-          LA region's biggest civic issues. Join an existing project team or
-          pitch your own civic issue.
-        p
-          strong Downtown - Tuesdays at 6:30 pm
-          address.
-            La Kretz Innovation Center#[br]
-            Room 402#[br]
-            525 S Hewitt St#[br]
-            Los Angeles, CA 90013
-        p
-          strong Westside - Thursdays at 6:30 pm
-          address.
-            Westside - Thursdays at 6:30 pm#[br]
-            Santa Monica Public Library#[br]
-            601 Santa Monica Blvd#[br]
-            Santa Monica, CA 90401
-        p
-          a(href='https://www.meetup.com/hackforla/',
-            target='_blank').btn.btn-primary RSVP on Meetup
-          a(href='http://hackforla-slack.herokuapp.com/',
-            target='_blank').btn.btn-primary Join us on Slack
-      aside.section-aside
-        img(src='/images/la-kretz.jpg', alt='Exterior photo of La Kretz Innovation Center')
+  section#hack-nights.content-section.section-hack-nights
+    .page-contain
+      h2 Hack Nights - Every Tuesday & Wednesday
+      p.
+        We host weekly Hack Nights in Downtown Los Angeles and Santa Monica.
+        We organize groups of volunteers to build technology addressing the
+        LA region's biggest civic issues. Join an existing project team or
+        pitch your own civic issue.
+      .locations
+        .location
+          .location-img(style='background-image: url("/images/la-kretz.jpg")')
+          .location-details
+              h3.location-header
+                strong Downtown
+                |  Tuesdays at 6:30 pm
+              address.
+                La Kretz Innovation Center, Room 402#[br]
+                525 S Hewitt St, Los Angeles, CA 90013
+        .location
+          .location-img(style='background-image: url("/images/santa-monica.jpg")')
+          .location-details
+              h3.location-header
+                strong Westside
+                |  Wednesdays at 6:30 pm
+              address.
+                Pivotal Labs, Suite 200#[br]
+                1333 2nd Street, Santa Monica, CA 90013
+      p
+        a(href='https://www.meetup.com/hackforla/',
+          target='_blank').btn.btn-primary RSVP on Meetup
+        a(href='http://hackforla-slack.herokuapp.com/',
+          target='_blank').btn.btn-primary Join our Slack
 
   -
     const projects = [
@@ -107,13 +110,15 @@ block content
       }
     ]
 
-  section#projects.content-section
-    .section-inner.page-contain
-      .section-body-full
+  section#projects.content-section.projects
+    .page-contain
+      .project-header
         h2 Current Projects
+        p.project-pitch
+          a(href='#') Have an idea? Submit your pitch
       ul.project-list.unstyled-list
         each item in projects
-          li(class={featured: item.featured}).project-card
+          li.project-card
             .project-card-inner
               .project-tmb
                 img(src=item.img).project-tmb-img
@@ -126,8 +131,6 @@ block content
                     li
                       a(href=link, target='_blank')= key
       .section-body-full
-        p.project-pitch
-          a(href='#') Have an idea? Submit your pitch
 
   section#impact.content-section
     .section-inner.page-contain
