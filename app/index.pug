@@ -10,10 +10,10 @@ block precontent
         is welcome!
       form.js-ajax-form.hero-signup(action='thank-you', method='post', name='Quick Signup Form', netlify)
         .form-input
-          label(for='hero-signup').sr-only Enter you email address
+          label(for='hero-signup').sr-only Enter your email address
           input(type='email',
             name='email',
-            placeholder='Enter you email address')#hero-signup
+            placeholder='Enter your email address', required)#hero-signup
         button(type='submit').btn.btn-primary Sign up for updates
         .form-confirmation.hidden Thanks! You'll hear from us soon.
 
@@ -206,14 +206,17 @@ block content
       #contact
         h3 Contact Us
         p.
-          Are you press and want to get in touch? Are you interested in becoming a sponsor? Want to just check us out on Slack? Looking to volunteer?
+          Are you press and want to get in touch? Are you interested in becoming a sponsor? Want to just #[a(href='http://hackforla-slack.herokuapp.com/', target='_blank') check us out on Slack]? Looking to volunteer?
         form.js-ajax-form.contact-form(action='thank-you', method='post', name='Contact Form', netlify)
-          textarea(placeholder='Send us a message')
-          button(type='submit').btn.btn-primary Send message
-          a(href='http://hackforla-slack.herokuapp.com/',
-            target='_blank').btn.btn-primary Join us on Slack
+          textarea(placeholder='Send us a message', required)
+          .form-controls
+            .form-input
+              label(for='contact-email').sr-only Enter your email address
+              input(type='email',
+                name='email',
+                placeholder='Enter your email address', required)#contact-email
+            button(type='submit').btn.btn-primary Send message
           p.form-confirmation.hidden Thanks! You'll hear from us soon.
-
   section#sponsors.content-section
     .section-inner.page-contain
       .section-body-full

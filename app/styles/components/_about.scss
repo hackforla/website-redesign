@@ -5,6 +5,20 @@
   textarea {
     min-height: 200px;
   }
+
+  .form-controls {
+    @media #{$bp-tablet-up} {
+      display: flex;
+
+      .form-input {
+        flex-grow: 1;
+      }
+
+      .btn {
+        margin: 0 0 24px 12px;
+      }
+    }
+  }
 }
 
 .sponsor-garden {
