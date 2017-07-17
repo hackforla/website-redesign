@@ -1,6 +1,8 @@
 header.main-header
   .main-header-content
-    .branding Hack for LA
+    .branding
+      .sr-only Hack for LA
+      img(src='/images/logo-hfla.svg').logo
     nav.header-nav
       ul.inline-list
         li
@@ -8,11 +10,15 @@ header.main-header
         li
           a(href='#projects').js-smooth-scroll Projects
         li
-          a(href='#about').js-smooth-scroll About
-        li
           a(href='#press').js-smooth-scroll Press
+        li
+          a(href='#about').js-smooth-scroll About
         li
           a(href='#contact').js-smooth-scroll Contact Us
     if socialLinks
       .social-links
-        +social-list(socialLinks)
+        +social-list({
+          'Github': socialLinks['Github'],
+          'Slack': socialLinks['Slack'],
+          'Facebook': socialLinks['Facebook']
+        })

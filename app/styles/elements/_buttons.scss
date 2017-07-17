@@ -12,6 +12,11 @@
   text-decoration: none;
   transition: all 100ms ease-in;
 
+  &:link,
+  &:visited {
+    color: $color-white;
+  }
+
   &:hover,
   &:active,
   &:focus {

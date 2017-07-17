@@ -1,4 +1,5 @@
 /* eslint-env browser */
+import autosize from 'autosize';
 import jquery from 'jquery';
 import _ from 'underscore';
 import 'jquery.scrollto';
@@ -54,7 +55,9 @@ import 'jquery.scrollto';
         }
       };
     }).catch(function(e) {
+      /* eslint-disable no-console */
       console.error('Error during service worker registration:', e);
+      /* eslint-enable no-console */
     });
   }
 
@@ -65,10 +68,10 @@ import 'jquery.scrollto';
     e.preventDefault();
     const hash = $(e.currentTarget).attr('href');
     const $scrollTarget = $(hash);
-    $(window).scrollTo($scrollTarget, 300, {
-      onAfter: () => {
-        window.location.hash = hash;
-      }
+    $(window).scrollTo($scrollTarget, {
+      duration: 300,
+      offset: window.matchMedia('(min-width: 768px)').matches ?
+          -($('.main-header').outerHeight()) : 0
     });
   }, 200, true)).on('click', '.js-toggle-nav', _.debounce(e => {
     $(e.currentTarget).blur();
@@ -82,4 +85,14 @@ import 'jquery.scrollto';
       $body.removeClass('scroll-top');
     }
   });
+
+  $('.js-ajax-form').on('submit', e => {
+    e.preventDefault();
+    const $form = $(e.currentTarget);
+    $.post($form.attr('action'), $form.serialize()).then(function() {
+      $form.find('.form-confirmation').removeClass('hidden');
+    });
+  });
+
+  autosize($('textarea'));
 })(jquery);

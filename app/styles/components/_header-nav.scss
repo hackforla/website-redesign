@@ -17,7 +17,6 @@ $nav-width: 240px;
   }
 
   a {
-    color: $color-blue;
     text-decoration: none;
   }
 
@@ -31,7 +30,7 @@ $nav-width: 240px;
     background: none;
     box-shadow: none;
     flex-grow: 1;
-    padding: 0;
+    padding: 0 0 0 80px;
     position: static;
 
     ul {
@@ -41,11 +40,6 @@ $nav-width: 240px;
     li {
       margin-left: 2em;
       width: auto;
-    }
-
-    a {
-      color: $color-white;
-      text-decoration: none;
     }
   }
 }

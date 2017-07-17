@@ -8,13 +8,14 @@ block precontent
         Can you design, write, or code? Are you an activist with an idea? You
         can help Los Angeles live up to its potential at Hack for LA. Everyone
         is welcome!
-      form.hero-signup(action='#', method='post')
+      form.js-ajax-form.hero-signup(action='thank-you', method='post', name='Quick Signup Form', netlify)
         .form-input
           label(for='hero-signup').sr-only Enter you email address
           input(type='email',
             name='email',
             placeholder='Enter you email address')#hero-signup
         button(type='submit').btn.btn-primary Sign up for updates
+        .form-confirmation.hidden Thanks! You'll hear from us soon.
 
 block content
   section#hack-nights.content-section.section-hack-nights
@@ -25,6 +26,16 @@ block content
         We organize groups of volunteers to build technology addressing the
         LA region's biggest civic issues. Join an existing project team or
         pitch your own civic issue.
+      .impact-stats
+        p.impact-stat
+          span.impact-large.type-h1 40
+          |  weekly attendees
+        p.impact-stat
+          span.impact-large.type-h1 50-50
+          |  women &amp; men
+        p.impact-stat
+          span.impact-large.type-h1 50%
+          |  people of color
       .locations
         .location
           .location-img(style='background-image: url("/images/la-kretz.jpg")')
@@ -111,11 +122,8 @@ block content
     ]
 
   section#projects.content-section.projects
-    .page-contain
-      .project-header
-        h2 Current Projects
-        p.project-pitch
-          a(href='#') Have an idea? Submit your pitch
+    .page-contain.projects-inner
+      h2.project-header Current Projects
       ul.project-list.unstyled-list
         each item in projects
           li.project-card
@@ -125,24 +133,32 @@ block content
               .project-body
                 h3.project-title= item.title
                 p.project-description= item.description
-                p.project-needs Looking for: #{item.needs}
-                ul.inline-list.project-links
-                  each link, key in item.links
-                    li
-                      a(href=link, target='_blank')= key
-      .section-body-full
-
-  section#impact.content-section
-    .section-inner.page-contain
-      .impact-stat
-        .impact-large 3,000
-        p People
-      .impact-stat
-        .impact-large 50%
-        p Women hackers
-      .impact-stat
-        .impact-large 50%
-        p People of color
+                if item.links
+                  .project-links
+                    strong Links:
+                    - let i = 0;
+                    each link, key in item.links
+                      - i++;
+                      |  #[a(href=link, target='_blank')= key]
+                      if (Object.keys(item.links).length !== i)
+                        | ,
+                if item.partner
+                  .project.partner
+                    strong Partner:
+                    if item.partnerLink
+                      |  #[a(href=item.partnerLink, target='_blank')= item.partner]
+                    else
+                      |  #{item.partner}
+                if item.needs
+                  .project-needs
+                    strong Looking for:
+                    |  #{item.needs}
+                if item.location
+                  .project-location
+                    strong Location:
+                    |  #{item.location}
+      p.project-pitch.
+        Have an idea? #[a(href='#contact').js-smooth-scroll.btn.btn-primary Submit your pitch]
 
   -
     const news = [
@@ -165,46 +181,51 @@ block content
         url: 'http://www.govtech.com/dc/articles/March-4-Declared-Open-Data-Day-in-Los-Angeles-Cities-Worldwide.html'
       }
     ]
-  section#press.content-section
-    .section-inner.page-contain
-      .section-body-full
-        h2 Featured News
-        ul
-          each item in news
-            li.news-card
-              .news-card-inner
-                .news-tmb
-                  img(src=item.img).news-tmb-img
-                .news-body
-                  a(href=item.url)
-                    h3.news-title= item.title
-                  p
-                    em= item.publication
-
-  section#about.content-section
-    .section-inner.page-contain
-      .section-body-full
-        h2 Want to know more about Hack for LA?
+  section#press.content-section.press
+    .page-contain
+      blockquote.quote
         p.
-          Hack for LA is the official Los Angeles chapter of Code for America, a national nonprofit that believes government can work for the people, by the people, in the 21st century. We bring together coders, designers, entrepreneurs, students, government staff, activists, and other civic-minded people to solve the LA region’s biggest civic challenges.
+          Hack for LA is a great example of how we can harness technology and our city's creativity to solve everyday problems. As Mayor, I will closely partner with our tech industry to create jobs and bring innovation to City Hall so government works faster and more efficiently.
+        cite.type-h4 Mayor Eric Garcetti
+        img(src='/images/quote-garcetti.jpg').quote-tmb
+      h2 Press
+      ul.news-cards.unstyled-list
+        each item in news
+          li.news-card
+            .news-card-inner
+              .news-body
+                a(href=item.url)
+                  h3.news-title= item.title
+                p= item.publication
+
+  section#about.content-section.about
+    .page-contain
+      h2 Want to know more about Hack for LA?
+      p.
+        Hack for LA is the official Los Angeles chapter of Code for America, a national nonprofit that believes government can work for the people, by the people, in the 21st century. We bring together coders, designers, entrepreneurs, students, government staff, activists, and other civic-minded people to solve the LA region’s biggest civic challenges.
+      #contact
         h3 Contact Us
         p.
           Are you press and want to get in touch? Are you interested in becoming a sponsor? Want to just check us out on Slack? Looking to volunteer?
-        form
+        form.js-ajax-form.contact-form(action='thank-you', method='post', name='Contact Form', netlify)
           textarea(placeholder='Send us a message')
-          button(type='submit').btn.btn-primary Send
-        a(href='http://hackforla-slack.herokuapp.com/',
-          target='_blank').btn.btn-primary Join us on Slack
+          button(type='submit').btn.btn-primary Send message
+          a(href='http://hackforla-slack.herokuapp.com/',
+            target='_blank').btn.btn-primary Join us on Slack
+          p.form-confirmation.hidden Thanks! You'll hear from us soon.
 
   section#sponsors.content-section
     .section-inner.page-contain
       .section-body-full
         h2 Sponsors
         .sponsor-garden
-          ul.inline-list
+          ul.unstyled-list
             li.sponsor-logo
-              a(href='https://www.codeforamerica.org/')
-                img(src='/images/logo-cfa.svg', alt='Code for America', target='_blank')
+              a(href='https://www.codeforamerica.org/', target='_blank')
+                img(src='/images/logo-cfa.svg', alt='Code for America')
             li.sponsor-logo
-              a(href='http://laincubator.org/')
-                img(src='/images/logo-laci.svg', alt='Los Angeles Cleantech Incubator', target='_blank')
+              a(href='http://laincubator.org/', target='_blank')
+                img(src='/images/logo-laci.svg', alt='Los Angeles Cleantech Incubator')
+            li.sponsor-logo
+              a(href='https://pivotal.io/labs', target='_blank')
+                img(src='/images/logo-pivotal-labs.svg', alt='Pivotal Labs')

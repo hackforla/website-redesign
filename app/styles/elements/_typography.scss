@@ -28,6 +28,7 @@ h1,
 
 h2,
 .type-h2 {
+  color: $color-red;
   font:
     map-get($font-weight, bold)
     #{map-get($font-size-h2, mobile)} / #{map-get($line-height-h2, mobile)}
@@ -57,6 +58,24 @@ blockquote p,
     #{map-get($font-size-blockquote, mobile)} /
     #{map-get($line-height-blockquote, mobile)}
     map-get($font-family, body);
+}
+
+.quote {
+  border-bottom: 2px solid rgba($color-teal, .25);
+  margin: 0 0 32px;
+  padding: 0 0 32px;
+  position: relative;
+
+  cite {
+    font-style: normal;
+    font-weight: map-get($font-weight, normal);
+  }
+
+  .quote-tmb {
+    @include position(absolute, null -24px -16px null);
+    border-radius: 100px;
+    display: block;
+  }
 }
 
 small,
