@@ -66,15 +66,16 @@ gulp.task('embed-sprites', cb =>
 // prefixed with an underscore.
 gulp.task('copy', () =>
   gulp.src([
+    // Uncomment the next line if you need a basic htaccess file.
+    // `node_modules/apache-server-configs/dist/.htaccess`,
     `${src}/**/*`,
     `!${src}/_*`,
-    `!${src}/images`,
-    `!${src}/scripts`,
-    `!${src}/styles`,
+    `!${src}/_**/*`,
+    `!${src}/images/**/*`,
+    `!${src}/scripts/**/*`,
+    `!${src}/styles/**/*`,
     `!${src}/**/*.pug`,
     `!${src}/**/*.md`
-    // Uncomment the next line if you need a basic htaccess file.
-    // `node_modules/apache-server-configs/dist/.htaccess`
   ], {
     dot: true
   }).pipe(gulp.dest(dist))
@@ -87,12 +88,12 @@ gulp.task('stylelint', function() {
   return gulp.src([
     `${src}/styles/**/*.s+(a|c)ss`,
     `${src}/styles/**/*.css`,
-    `!${src}/styles/vendor/**`,
+    `!${src}/styles/vendor/**`
   ])
   .pipe($.stylelint({
     reporters: [
-      {formatter: 'string', console: true},
-    ],
+      {formatter: 'string', console: true}
+    ]
   }));
 });
 
@@ -189,10 +190,10 @@ gulp.task('markdown', () => {
   .pipe($.markdownToJson(marked))
   .pipe($.wrap(data =>
       fs.readFileSync(`${src}/${data.contents.template}`).toString(), {}, {
-    basedir: 'app',
-    engine: 'pug',
-    pretty: true
-  }))
+        basedir: 'app',
+        engine: 'pug',
+        pretty: true
+      }))
   .pipe($.rename({extname: '.html'}))
   .pipe(gulp.dest('.tmp'))
   .pipe($.htmlmin(minificationOptions))
