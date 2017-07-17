@@ -6,14 +6,26 @@ header.main-header
     nav.header-nav
       ul.inline-list
         li
-          a(href='#hack-nights').js-smooth-scroll Hack Nights
+          a(href='#hack-nights').js-smooth-scroll
+            svg.icon.icon-hack-nights.nav-icon
+              use(xlink:href=`#icon-hack-nights`)
+            | Hack Nights
         li
-          a(href='#projects').js-smooth-scroll Projects
+          a(href='#projects').js-smooth-scroll
+            svg.icon.icon-projects.nav-icon
+              use(xlink:href=`#icon-projects`)
+            | Projects
         li
-          a(href='#press').js-smooth-scroll Press
+          a(href='#press').js-smooth-scroll
+            svg.icon.icon-press.nav-icon
+              use(xlink:href=`#icon-press`)
+            | Press
         li
-          a(href='#about').js-smooth-scroll About
-        li
+          a(href='#about').js-smooth-scroll
+            svg.icon.icon-about.nav-icon
+              use(xlink:href=`#icon-about`)
+            | About
+        li.hide-mobile
           a(href='#contact').js-smooth-scroll Contact Us
     if socialLinks
       .social-links

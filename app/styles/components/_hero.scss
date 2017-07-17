@@ -13,7 +13,7 @@
     background:
       linear-gradient(
         to bottom,
-        rgba($color-blue-dark, 0) 30%,
+        rgba($color-blue-dark, 0) 20%,
         rgba($color-blue-dark, 1) 100%
       );
     content: '';
@@ -24,7 +24,7 @@
 
 .hero-inner {
   color: $color-white;
-  margin: 60px auto 20px;
+  margin: 60px auto 40px;
   max-width: $max-content-width;
   position: relative;
   z-index: 2;

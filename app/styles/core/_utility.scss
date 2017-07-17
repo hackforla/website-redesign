@@ -10,4 +10,11 @@
 .hidden {
   display: none !important;
 }
+
+.hide-mobile {
+  @media #{$bp-below-tablet} {
+    display: none !important;
+  }
+}
 /* stylelint-enable */
+
