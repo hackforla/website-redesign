@@ -28,5 +28,11 @@
     &:visited {
       color: $color-black;
     }
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: darken($color-red, 10%);
+    }
   }
 }

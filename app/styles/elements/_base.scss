@@ -49,16 +49,16 @@ img {
 }
 
 a {
+  transition: color 100ms ease-in;
+
   &:link,
   &:visited {
-    color: $color-blue;
-    text-decoration: none;
+    color: $color-red;
   }
 
   &:hover,
   &:active,
   &:focus {
-    color: $color-red;
-    text-decoration: underline;
+    color: darken($color-red, 10%);
   }
 }

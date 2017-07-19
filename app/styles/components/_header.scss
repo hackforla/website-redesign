@@ -27,6 +27,19 @@
         margin-right: 0;
       }
     }
+
+    a {
+      &:link,
+      &:visited {
+        color: $color-black;
+      }
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: $color-red;
+      }
+    }
   }
 
   .branding {

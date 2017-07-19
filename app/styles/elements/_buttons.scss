@@ -1,5 +1,5 @@
 .btn {
-  background: $color-blue;
+  background: $color-red;
   border: 0;
   border-radius: 20px;
   box-shadow: 0 0 8px 0 rgba($color-black, .2);
@@ -21,7 +21,8 @@
   &:hover,
   &:active,
   &:focus {
-    background: darken($color-blue, 10%);
+    background: darken($color-red, 10%);
     color: $color-white;
+    text-decoration: none;
   }
 }
