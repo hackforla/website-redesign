@@ -106,18 +106,7 @@ block content
         },
         needs: 'Designers, Python',
         img: 'http://placehold.it/600x400',
-        location: 'Downtown',
-      },
-      {
-        title: 'DOT Planner',
-        description: 'We are mapping out all of the city projects that are making it easier to get around Los Angeles—road improvements, bike lanes, metro expansion, and way more.',
-        links: {
-          'Github': ''
-        },
-        partner: 'DOT',
-        needs: 'Designers',
-        img: 'http://placehold.it/600x400',
-        location: 'Downtown',
+        location: 'Downtown'
       }
     ]
 
@@ -131,7 +120,7 @@ block content
               .project-tmb
                 img(src=item.img).project-tmb-img
               .project-body
-                h3.project-title= item.title
+                h4.project-title= item.title
                 p.project-description= item.description
                 if item.links
                   .project-links
@@ -194,8 +183,8 @@ block content
           li.news-card
             .news-card-inner
               .news-body
-                a(href=item.url)
-                  h3.news-title= item.title
+                h4.news-title
+                  a(href=item.url)= item.title
                 p= item.publication
 
   section#about.content-section.about

@@ -45,6 +45,7 @@ h3,
 
 h4,
 .type-h4 {
+  color: $color-red;
   font:
     map-get($font-weight, bold)
     #{map-get($font-size-h4, mobile)} / #{map-get($line-height-h4, mobile)}
@@ -67,6 +68,7 @@ blockquote p,
   position: relative;
 
   cite {
+    color: $color-black;
     font-style: normal;
     font-weight: map-get($font-weight, normal);
   }

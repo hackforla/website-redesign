@@ -52,11 +52,13 @@ a {
   &:link,
   &:visited {
     color: $color-blue;
+    text-decoration: none;
   }
 
   &:hover,
   &:active,
   &:focus {
     color: $color-red;
+    text-decoration: underline;
   }
 }

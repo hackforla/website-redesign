@@ -22,4 +22,11 @@
 
 .news-title {
   margin-bottom: 0;
+
+  a {
+    &:link,
+    &:visited {
+      color: $color-black;
+    }
+  }
 }
