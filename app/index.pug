@@ -197,7 +197,7 @@ block content
         p.
           Are you press and want to get in touch? Are you interested in becoming a sponsor? Want to just #[a(href='http://hackforla-slack.herokuapp.com/', target='_blank') check us out on Slack]? Looking to volunteer?
         form.js-ajax-form.contact-form(action='thank-you', method='post', name='Contact Form', netlify)
-          textarea(placeholder='Send us a message', required)
+          textarea(placeholder='Send us a message', name='message', required)
           .form-controls
             .form-input
               label(for='contact-email').sr-only Enter your email address
