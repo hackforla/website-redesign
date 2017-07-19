@@ -41,3 +41,21 @@
     }
   }
 }
+
+.sponsor-logo {
+  display: block;
+  height: 50px;
+
+  @media #{$bp-mobile-up} {
+    height: 70px;
+  }
+
+  img {
+    display: block;
+    height: 50px;
+
+    @media #{$bp-mobile-up} {
+      height: 70px;
+    }
+  }
+}
