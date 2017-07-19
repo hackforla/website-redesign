@@ -34,9 +34,14 @@
   margin-bottom: 24px;
   overflow: hidden;
 
-  @media #{$bp-mobile-up} {
+  @media #{$bp-tablet-up} {
     margin-bottom: 0;
   }
+}
+
+.project-tmb-img {
+  display: block;
+  width: 100%;
 }
 
 .project-body {
