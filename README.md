@@ -48,7 +48,7 @@ Which will run a local server at `http://localhost:3002/` served from the `/dist
 
 <a name="deploy"></a>
 ## Deploying
-TBD
+The site is continuously deployed by [Netlify](https://www.netlify.com). Whenever a commit is made to the `master` branch of this repository, Netlify runs the build comman (`gulp`) and deploys the contents of `/dist` to its servers.
 
 <a name="tech"></a>
 ## Technical Details
@@ -63,7 +63,7 @@ This project is largely based on the [Web Starter Kit](https://developers.google
 
 Source files for the site's CSS are located in the `/app/styles` directory. The SCSS files are processed, concatenated, and minfied by the `gulp styles` task.
 
-[Bourbon (v4.2.7)](bourbon.io/docs/) is used as a light SCSS mixin library, and browser prefixing is included as a post-processor by the `gulp styles` task. 
+[Bourbon (v4.3.3)](bourbon.io/docs/) is used as a light SCSS mixin library, and browser prefixing is included as a post-processor by the `gulp styles` task. 
 
 <a name="tech-js"></a>
 ### JavaScript
