@@ -1,0 +1,4 @@
+# Redirects go here.
+# /path   /destination                            Response code
+
+/slack    http://hackforla-slack.herokuapp.com/   200

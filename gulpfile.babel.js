@@ -69,7 +69,6 @@ gulp.task('copy', () =>
     // Uncomment the next line if you need a basic htaccess file.
     // `node_modules/apache-server-configs/dist/.htaccess`,
     `${src}/**/*`,
-    `!${src}/_*`,
     `!${src}/_**/*`,
     `!${src}/images/**/*`,
     `!${src}/scripts/**/*`,
