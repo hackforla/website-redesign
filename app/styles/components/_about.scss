@@ -21,7 +21,7 @@
   }
 }
 
-.sponsor-garden {
+.logo-garden {
   li {
     margin-bottom: 12px;
 
@@ -40,22 +40,16 @@
       justify-content: space-between;
     }
   }
-}
 
-.sponsor-logo {
-  display: block;
-  height: 50px;
+  .logo {
+    img {
+      display: block;
+      height: 50px;
 
-  @media #{$bp-mobile-up} {
-    height: 70px;
-  }
-
-  img {
-    display: block;
-    height: 50px;
-
-    @media #{$bp-mobile-up} {
-      height: 70px;
+      @media #{$bp-mobile-up} {
+        height: 70px;
+      }
     }
   }
 }
+
