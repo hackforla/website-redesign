@@ -20,6 +20,7 @@ collections: # A list of collections the CMS should be able to edit
           - label: "Meta Info"
             name: "meta"
             widget: "object"
+            required: false
             fields:
               - label: "Description"
                 name: "dek"
@@ -80,6 +81,7 @@ collections: # A list of collections the CMS should be able to edit
           - label: "Demographic Stats"
             name: "stats"
             widget: "list"
+            required: false
             fields:
               - label: "Stat Figure"
                 name: "figure"
@@ -90,6 +92,7 @@ collections: # A list of collections the CMS should be able to edit
           - label: "Projects"
             name: "projects"
             widget: "list"
+            required: false
             fields:
               - label: "Image"
                 name: "image"
@@ -125,6 +128,7 @@ collections: # A list of collections the CMS should be able to edit
           - label: "Testimonial"
             name: "testimonial"
             widget: "object"
+            required: false
             fields:
               - label: "Quote"
                 name: "quote"
@@ -138,6 +142,7 @@ collections: # A list of collections the CMS should be able to edit
           - label: "Press"
             name: "press"
             widget: "list"
+            required: false
             fields:
               - label: "Title"
                 name: "title"
@@ -150,7 +155,7 @@ collections: # A list of collections the CMS should be able to edit
                 widget: "string"
           - label: "About"
             name: "about"
-            widget: "list"
+            widget: "object"
             fields:
               - label: "Title"
                 name: "title"
