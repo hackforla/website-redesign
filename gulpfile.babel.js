@@ -33,6 +33,7 @@ gulp.task('lint', () =>
   gulp.src([
     `${src}/scripts/**/*.js`,
     'gulpfile.babel.js',
+    '!${src}/scripts/vendor/**/*',
     '!node_modules/**'
   ]).pipe($.eslint())
   .pipe($.eslint.format())
