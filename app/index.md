@@ -92,6 +92,18 @@ testimonial:
     partner with our tech industry to create jobs and bring innovation to City
     Hall so government works faster and more efficiently.
   source: Mayor Eric Garcetti
+press:
+  - source: CNN
+    title: Why LA’s Tech Community is Trying to Hack Hunger
+    url: 'http://money.cnn.com/2017/04/19/technology/la-food-deserts/'
+  - source: LA Times
+    title: 'At L.A. ''hackathon,'' civic-minded coders aim to put city data to good use'
+    url: >-
+      http://www.latimes.com/local/california/la-me-hackathon-20150607-story.html
+  - source: GovTech
+    title: March 4 Declared “Open Data Day” in Los Angeles
+    url: >-
+      http://www.govtech.com/dc/articles/March-4-Declared-Open-Data-Day-in-Los-Angeles-Cities-Worldwide.html
 about:
   dek: >-
     Hack for LA is the official Los Angeles chapter of Code for America, a
@@ -106,6 +118,7 @@ sponsors:
     url: 'https://www.codeforamerica.org/'
 template: _templates/_home.pug
 ---
+
 
 
 
