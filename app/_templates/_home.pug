@@ -37,75 +37,25 @@ block content
         a(href='http://hackforla-slack.herokuapp.com/',
           target='_blank').btn.btn-primary Join our Slack
 
-  -
-    const projects = [
-      {
-        title: 'Food Oasis',
-        description: 'Everyone deserves access to healthy food. Help us make it easier for Angelenos to find the best places to buy or grow healthy food in their city.',
-        links: {
-          'Github': 'https://github.com/foodoasisla',
-          'Site': 'https://foodoasis.la/',
-        },
-        partner: 'LA Food Policy Council',
-        needs: 'Java Developers, Designers, Writers',
-        img: '/images/project-fola.jpg',
-        featured: true,
-        location: 'Downtown',
-      },
-      {
-        title: 'Work for LA',
-        description: 'Applying for work should be simple—but the application process for the City of LA is confusing and cumbersome. We’re going to make it easier to find the job of your dreams.',
-        links: {
-          'Github': '',
-          'Site': 'http://www.workfor.la/',
-        },
-        partner: 'Department of Personnel',
-        needs: 'UX, Writers, Designers',
-        img: '/images/project-workforla.jpg',
-        location: 'Downtown',
-      },
-      {
-        title: 'Adopt-A-Civic Artwork',
-        description: 'There are thousands of works of public art scattered around the city. There should be one place to see where they are and how they’re doing. We’re building it.',
-        links: {
-          'Github': 'https://github.com/hackforla/adopt-civic-art',
-        },
-        needs: 'UX, Designers, Python',
-        img: '/images/project-art.jpg',
-        location: 'Downtown',
-      },
-      {
-        title: 'Curb Map',
-        description: 'We’re going to build an iOS and Android app that will tell you where and when you can park in the city—all based on your location. Come drive with us.',
-        links: {
-          'Github': 'https://github.com/curbmap',
-          'Site': 'https://curbmap.com/'
-        },
-        needs: 'Designers, Python',
-        img: '/images/project-curb-map.jpg',
-        location: 'Downtown'
-      }
-    ]
-
   section#projects.content-section.projects
     .page-contain.projects-inner
       h2.project-header Current Projects
       ul.project-list.unstyled-list
-        each item in projects
+        each item in contents.projects
           li.project-card
             .project-card-inner
               .project-tmb
-                img(src=item.img).project-tmb-img
+                img(src=item.image).project-tmb-img
               .project-body
                 h4.project-title= item.title
-                p.project-description= item.description
+                p.project-description= item.dek
                 if item.links
                   .project-links
                     strong Links:
                     - let i = 0;
                     each link, key in item.links
                       - i++;
-                      |  #[a(href=link, target='_blank')= key]
+                      |  #[a(href=link.url, target='_blank')= link.name]
                       if (Object.keys(item.links).length !== i)
                         | ,
                 if item.partner
@@ -115,10 +65,10 @@ block content
                       |  #[a(href=item.partnerLink, target='_blank')= item.partner]
                     else
                       |  #{item.partner}
-                if item.needs
+                if item.looking
                   .project-needs
                     strong Looking for:
-                    |  #{item.needs}
+                    |  #{item.looking}
                 if item.location
                   .project-location
                     strong Location:
@@ -126,50 +76,26 @@ block content
       p.project-pitch.
         Have an idea? #[a(href='#contact').js-smooth-scroll.btn.btn-primary Submit your pitch]
 
-  -
-    const news = [
-      {
-        title: 'Why LA’s Tech Community is Trying to Hack Hunger',
-        publication: 'CNN',
-        img: 'http://placehold.it/600x400',
-        url: 'http://money.cnn.com/2017/04/19/technology/la-food-deserts/'
-      },
-      {
-        title: `At L.A. 'hackathon,' civic-minded coders aim to put city data to good use`,
-        publication: 'LA Times',
-        img: 'http://placehold.it/600x400',
-        url: 'http://www.latimes.com/local/california/la-me-hackathon-20150607-story.html'
-      },
-      {
-        title: 'March 4 Declared “Open Data Day” in Los Angeles',
-        publication: 'GovTech',
-        img: 'http://placehold.it/600x400',
-        url: 'http://www.govtech.com/dc/articles/March-4-Declared-Open-Data-Day-in-Los-Angeles-Cities-Worldwide.html'
-      }
-    ]
   section#press.content-section.press
     .page-contain
       blockquote.quote
-        p.
-          Hack for LA is a great example of how we can harness technology and our city's creativity to solve everyday problems. As Mayor, I will closely partner with our tech industry to create jobs and bring innovation to City Hall so government works faster and more efficiently.
-        cite.type-h4 Mayor Eric Garcetti
-        img(src='/images/quote-garcetti.jpg').quote-tmb
+        p= contents.testimonial.quote
+        cite.type-h4= contents.testimonial.source
+        img(src=`${contents.testimonial.image}`).quote-tmb
       h2 Press
       ul.news-cards.unstyled-list
-        each item in news
+        each item in contents.press
           li.news-card
             .news-card-inner
               .news-body
                 h4.news-title
                   a(href=item.url)= item.title
-                p= item.publication
+                p= item.source
 
   section#about.content-section.about
     .page-contain
       h2= contents.about.title
       != md(contents.about.dek)
-      p.
-        Hack for LA is the official Los Angeles chapter of Code for America, a national nonprofit that believes government can work for the people, by the people, in the 21st century. We bring together coders, designers, entrepreneurs, students, government staff, activists, and other civic-minded people to solve the LA region’s biggest challenges.
       #contact
         h3 Contact Us
         p.
@@ -191,12 +117,7 @@ block content
         h2 Sponsors
         .logo-garden
           ul.unstyled-list
-            li.logo
-              a(href='https://www.codeforamerica.org/', target='_blank')
-                img(src='/images/logo-cfa.svg', alt='Code for America')
-            li.logo
-              a(href='http://laincubator.org/', target='_blank')
-                img(src='/images/logo-laci.svg', alt='Los Angeles Cleantech Incubator')
-            li.logo
-              a(href='https://pivotal.io/labs', target='_blank')
-                img(src='/images/logo-pivotal-labs.svg', alt='Pivotal Labs')
+            each item in contents.sponsors
+              li.logo
+                a(href=item.url, target='_blank')
+                  img(src=item.image, alt=item.name)

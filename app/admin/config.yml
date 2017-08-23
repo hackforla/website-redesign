@@ -151,7 +151,7 @@ collections: # A list of collections the CMS should be able to edit
                 widget: "string"
               - label: "Description"
                 name: "dek"
-                widget: "text"
+                widget: "markdown"
           - label: "Sponsors"
             name: "sponsors"
             widget: "list"
