@@ -15,7 +15,22 @@ location:
     biggest civic issues. Join an existing project team or pitch your own civic
     issue.
   locations:
-    - {}
+    - address1: 'La Kretz Innovation Center, Room 402'
+      address2: 525 S Hewitt St
+      city: Los Angeles
+      date: 'Tuesdays at 6:30 pm'
+      image: /images/uploads/la-kretz.jpg
+      state: CA
+      title: Downtown
+      zip: '90013'
+    - address1: 'Pivotal Labs, Suite 200'
+      address2: 1333 2nd Street
+      city: Santa Monica
+      date: 'Wednesdays at 6:30 pm'
+      image: /images/uploads/santa-monica.jpg
+      state: CA
+      title: Westside
+      zip: '90401'
   title: Hack Nights - Every Tuesday & Wednesday
 about:
   dek: >-
@@ -31,4 +46,5 @@ sponsors:
     url: 'https://www.codeforamerica.org/'
 template: _templates/_home.pug
 ---
+
 
