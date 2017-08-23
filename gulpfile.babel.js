@@ -189,7 +189,9 @@ gulp.task('markdown', () => {
   ]).pipe($.plumber())
   .pipe($.markdownToJson(marked))
   .pipe($.wrap(data =>
-      fs.readFileSync(`${src}/${data.contents.template}`).toString(), {}, {
+      fs.readFileSync(`${src}/${data.contents.template}`).toString(), {
+        md: marked
+      }, {
         basedir: 'app',
         engine: 'pug',
         pretty: true
@@ -220,7 +222,7 @@ gulp.task('serve', ['default'], () => {
     port: 3000
   });
 
-  gulp.watch([`${src}/**/*.pug`], ['html', reload]);
+  gulp.watch([`${src}/**/*.pug`], ['markdown', 'html', reload]);
   gulp.watch([`${src}/**/*.md`], ['markdown', reload]);
   gulp.watch([`${src}/styles/**/*.{scss,css}`], ['styles', reload]);
   gulp.watch([`${src}/scripts/**/*.js`], ['lint', 'scripts', reload]);

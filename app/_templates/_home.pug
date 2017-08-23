@@ -3,11 +3,8 @@ extends /_layouts/_main.pug
 block precontent
   header.hero
     .hero-inner
-      h1 You can change LA for the better
-      p.type-featured.
-        Can you design, write, or code? Are you an activist with an idea? You
-        can help Los Angeles live up to its potential at Hack for LA. Everyone
-        is welcome!
+      h1= contents.hero.title
+      p.type-featured= contents.hero.dek
       form.js-ajax-form.hero-signup(action='thank-you', method='post', name='Quick Signup Form', netlify)
         .form-input
           label(for='hero-signup').sr-only Enter your email address
@@ -21,41 +18,19 @@ block precontent
 block content
   section#hack-nights.content-section.section-hack-nights
     .page-contain
-      h2 Hack Nights - Every Tuesday & Wednesday
-      p.
-        We host weekly Hack Nights in Downtown Los Angeles and Santa Monica.
-        We organize groups of volunteers to build technology addressing the
-        LA region's biggest civic issues. Join an existing project team or
-        pitch your own civic issue.
-      .impact-stats
-        p.impact-stat
-          span.impact-large.type-h1 40
-          |  weekly attendees
-        p.impact-stat
-          span.impact-large.type-h1 50-50
-          |  women &amp; men
-        p.impact-stat
-          span.impact-large.type-h1 50%
-          |  people of color
+      h2= contents.location.title
+      != md(contents.location.dek)
       .locations
-        .location
-          .location-img(style='background-image: url("/images/la-kretz.jpg")')
-          .location-details
-              h3.location-header
-                strong Downtown
-                |  Tuesdays at 6:30 pm
-              address.
-                La Kretz Innovation Center, Room 402#[br]
-                525 S Hewitt St, Los Angeles, CA 90013
-        .location
-          .location-img(style='background-image: url("/images/santa-monica.jpg")')
-          .location-details
-              h3.location-header
-                strong Westside
-                |  Wednesdays at 6:30 pm
-              address.
-                Pivotal Labs, Suite 200#[br]
-                1333 2nd Street, Santa Monica, CA 90013
+        each location in contents.location.locations
+          .location
+            .location-img(style=`background-image: url("${location.image}")`)
+            .location-details
+                h3.location-header
+                  strong= location.title
+                  |  #{location.date}
+                address.
+                  #{location.address1}#[br]
+                  #{location.address2}, #{location.city}, #{location.state} #{location.zip}
       p
         a(href='https://www.meetup.com/hackforla/',
           target='_blank').btn.btn-primary RSVP on Meetup
@@ -191,7 +166,8 @@ block content
 
   section#about.content-section.about
     .page-contain
-      h2 Want to know more about Hack for LA?
+      h2= contents.about.title
+      != md(contents.about.dek)
       p.
         Hack for LA is the official Los Angeles chapter of Code for America, a national nonprofit that believes government can work for the people, by the people, in the 21st century. We bring together coders, designers, entrepreneurs, students, government staff, activists, and other civic-minded people to solve the LA region’s biggest challenges.
       #contact
