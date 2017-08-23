@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: "hackforla/website-redesign" # Gulp will replace this with your GitHub repository
-  branch: "feature/cms" # Branch to update (master by default)
+  branch: "master" # Branch to update (master by default)
 
 media_folder: "app/images/uploads" # Folder where user uploaded files should go
 public_folder: "images/uploads"
