@@ -84,6 +84,14 @@ projects:
     looking: 'Designers, Python'
     title: Curb Map
     location: Downtown
+testimonial:
+  image: /images/uploads/quote-garcetti.jpg
+  quote: >-
+    Hack for LA is a great example of how we can harness technology and our
+    city's creativity to solve everyday problems. As Mayor, I will closely
+    partner with our tech industry to create jobs and bring innovation to City
+    Hall so government works faster and more efficiently.
+  source: Mayor Eric Garcetti
 about:
   dek: >-
     Hack for LA is the official Los Angeles chapter of Code for America, a
@@ -98,6 +106,7 @@ sponsors:
     url: 'https://www.codeforamerica.org/'
 template: _templates/_home.pug
 ---
+
 
 
 
