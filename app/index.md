@@ -7,7 +7,7 @@ hero:
     Can you design, write, or code? Are you an activist with an idea? You can
     help Los Angeles live up to its potential at Hack for LA. Everyone is
     welcome!
-  title: You can change LA for the better
+  title: You can change LA for the better!
 location:
   dek: >-
     We host weekly Hack Nights in Downtown Los Angeles and Santa Monica. We
@@ -124,6 +124,7 @@ sponsors:
     url: 'https://pivotal.io/labs'
 template: _templates/_home.pug
 ---
+
 
 
 
