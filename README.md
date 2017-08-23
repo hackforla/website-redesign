@@ -2,6 +2,7 @@
 ## Table of Contents
 * [Building the Project](#build)
 * [Deployment](#deploy)
+* [Content Updates](#content)
 * [Technical Details](#tech)
   * [Boilerplate](#tech-boilerplate)
 	* [CSS](#tech-css)
@@ -49,6 +50,14 @@ Which will run a local server at `http://localhost:3002/` served from the `/dist
 <a name="deploy"></a>
 ## Deploying
 The site is continuously deployed by [Netlify](https://www.netlify.com). Whenever a commit is made to the `master` branch of this repository, Netlify runs the build comman (`gulp`) and deploys the contents of `/dist` to its servers.
+
+<a name="content"></a>
+## Content Updates
+A very simple CMS is available for making site changes built on [NetlifyCMS](https://www.netlifycms.org).
+
+To make site changes, log in to [https://www.hackforla.org/admin](https://www.hackforla.org/admin). You will need to authenticate via Github, and will need write access to this repository.
+
+Content changes are written to a Markdown file that are then committed directly to `master`, which Netlify will then compile, build, and deploy. Since there is a build process involved, changes won't display instantly but will take a couple minutes.
 
 <a name="tech"></a>
 ## Technical Details
