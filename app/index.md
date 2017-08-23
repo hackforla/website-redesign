@@ -10,10 +10,11 @@ hero:
   title: You can change LA for the better!
 location:
   dek: >-
-    We host weekly Hack Nights in Downtown Los Angeles and Santa Monica. We
-    organize groups of volunteers to build technology addressing the LA region's
-    biggest civic issues. Join an existing project team or pitch your own civic
-    issue.
+    We host weekly Hack Nights in Downtown Los Angeles and Santa Monica. At
+    these events, we organize groups of volunteers to build technology
+    addressing the LA region’s biggest civic issues. Each night offers an
+    inclusive, diverse community, and everyone is welcome. Join an existing
+    project team or pitch your own civic issue.
   locations:
     - address1: 'La Kretz Innovation Center, Room 402'
       address2: 525 S Hewitt St
@@ -124,6 +125,7 @@ sponsors:
     url: 'https://pivotal.io/labs'
 template: _templates/_home.pug
 ---
+
 
 
 
