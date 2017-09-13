@@ -1,4 +1,5 @@
 # Redirects go here.
-# /path   /destination                            Response code
+# /path   /destination                                                                        Response code
 
-/slack    http://hackforla-slack.herokuapp.com/   301
+/slack    http://hackforla-slack.herokuapp.com/                                               301
+/donate   https://secure.codeforamerica.org/page/contribute/default?brigade=Hack%20For%20LA   301
