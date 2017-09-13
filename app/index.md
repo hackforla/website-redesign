@@ -82,7 +82,7 @@ projects:
         url: 'https://github.com/curbmap'
       - name: Site
         url: 'https://curbmap.com/'
-    looking: 'Designers, Python'
+    looking: 'Designers, iOS developers, Android developers, API developers (Node.js)'
     title: Curb Map
     location: Downtown
 testimonial:
