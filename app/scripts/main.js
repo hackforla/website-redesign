@@ -89,8 +89,15 @@ import 'jquery.scrollto';
   $('.js-ajax-form').on('submit', e => {
     e.preventDefault();
     const $form = $(e.currentTarget);
+
+    if ($form.data('loading')) {
+      return false;
+    }
+    $form.data('loading', true);
     $.post($form.attr('action'), $form.serialize()).then(function() {
       $form.find('.form-confirmation').removeClass('hidden');
+    }).always(function() {
+      $form.data('loading', false);
     });
   });
 
