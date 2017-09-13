@@ -5,12 +5,15 @@ block precontent
     .hero-inner
       h1= contents.hero.title
       p.type-featured= contents.hero.dek
-      form.js-ajax-form.hero-signup(action='thank-you', method='post', name='Quick Signup Form', netlify)
+      form.js-ajax-form.hero-signup(action='thank-you', method='post', name='Quick Signup Form', netlify, netlify-honeypot='bot-field')
         .form-input
           label(for='hero-signup').sr-only Enter your email address
           input(type='email',
             name='email',
             placeholder='Enter your email address', required)#hero-signup
+          .sr-only
+            label Don't fill this out if you're human:
+              input(name='bot-field')
         button(type='submit').btn.btn-primary Sign up for updates
         .form-confirmation.hidden
           strong Thanks! You'll hear from us soon.
@@ -100,7 +103,7 @@ block content
         h3 Contact Us
         p.
           Are you press and want to get in touch? Are you interested in becoming a sponsor? Want to just #[a(href='http://hackforla-slack.herokuapp.com/', target='_blank') check us out on Slack]? Looking to volunteer?
-        form.js-ajax-form.contact-form(action='thank-you', method='post', name='Contact Form', netlify)
+        form.js-ajax-form.contact-form(action='thank-you', method='post', name='Contact Form', netlify, netlify-honeypot='bot-field')
           textarea(placeholder='Send us a message', name='message', required)
           .form-controls
             .form-input
@@ -108,6 +111,9 @@ block content
               input(type='email',
                 name='email',
                 placeholder='Enter your email address', required)#contact-email
+            .sr-only
+              label Don't fill this out if you're human:
+                input(name='bot-field')
             button(type='submit').btn.btn-primary Send message
           p.form-confirmation.hidden
             strong Thanks! You'll hear from us soon.
