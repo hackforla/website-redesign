@@ -16,7 +16,7 @@ location:
     inclusive, diverse community, and everyone is welcome. Join an existing
     project team or pitch your own civic issue.
   locations:
-    - address1: 'La Kretz Innovation Center, Room 402'
+    - address1: 'La Kretz Innovation Center, Room 401'
       address2: 525 S Hewitt St
       city: Los Angeles
       date: 'Tuesdays at 6:30 pm'
