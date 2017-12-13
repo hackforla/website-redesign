@@ -19,7 +19,7 @@ location:
     - address1: 'La Kretz Innovation Center, Room 401'
       address2: 525 S Hewitt St
       city: Los Angeles
-      date: 'Tuesdays at 6:30 pm'
+      date: 'Tuesdays at 6:00 pm'
       image: /images/uploads/la-kretz.jpg
       state: CA
       title: Downtown
@@ -125,6 +125,7 @@ sponsors:
     url: 'https://pivotal.io/labs'
 template: _templates/_home.pug
 ---
+
 
 
 
