@@ -69,9 +69,9 @@ projects:
       - name: Github
         url: 'https://github.com/hackforla/adopt-civic-art'
     location: Downtown
-    looking: 'UX, Designers, Python'
-    partner: ''
-    title: Adopt-A-Civic Artwork
+    looking: ''
+    partner: County of Los Angeles
+    title: Art Watcher
   - dek: >-
       We’re going to build an iOS and Android app that will tell you where and
       when you can park in the city—all based on your location. Come drive with
@@ -130,6 +130,7 @@ sponsors:
     url: 'https://pivotal.io/labs'
 template: _templates/_home.pug
 ---
+
 
 
 
