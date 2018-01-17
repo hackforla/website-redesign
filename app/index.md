@@ -27,7 +27,7 @@ location:
     - address1: 'Pivotal Labs, Suite 200'
       address2: 1333 2nd Street
       city: Santa Monica
-      date: 'Wednesdays at 6:30 pm'
+      date: 'Wednesdays at 6:00 pm'
       image: /images/uploads/santa-monica.jpg
       state: CA
       title: Westside
@@ -125,6 +125,7 @@ sponsors:
     url: 'https://pivotal.io/labs'
 template: _templates/_home.pug
 ---
+
 
 
 
