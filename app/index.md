@@ -52,7 +52,6 @@ projects:
     links:
       - name: Github
         url: 'https://github.com/light-the-way'
-      - {}
     location: Downtown
     looking: 'Front-end Developers, UX Designers'
     title: Project Light The Way
@@ -134,6 +133,7 @@ sponsors:
     url: 'https://pivotal.io/labs'
 template: _templates/_home.pug
 ---
+
 
 
 
