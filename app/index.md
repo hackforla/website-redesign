@@ -35,44 +35,6 @@ location:
   title: Hack Nights - Every Tuesday & Wednesday
 projects:
   - dek: >-
-      Everyone deserves access to healthy food. Help us make it easier for
-      Angelenos to find the best places to buy or grow healthy food in their
-      city.
-    image: /images/uploads/project-fola.jpg
-    links:
-      - name: Github
-        url: 'https://github.com/foodoasisla'
-      - name: Site
-        url: 'https://foodoasis.la/'
-    location: ''
-    looking: ''
-    partner: Youth Policy Institute
-    title: Food Oasis
-  - dek: >-
-      Applying for work should be simple—but the application process for the
-      City of LA is confusing and cumbersome. We’re going to make it easier to
-      find the job of your dreams.
-    image: /images/uploads/project-workforla.jpg
-    links:
-      - name: Site
-        url: 'http://www.workfor.la/'
-    location: Downtown
-    looking: 'UX, Writers, Designers'
-    partner: Department of Personnel
-    title: Work for LA
-  - dek: >-
-      There are thousands of works of public art scattered around the city.
-      There should be one place to see where they are and how they’re doing.
-      We’re building it.
-    image: /images/uploads/project-art.jpg
-    links:
-      - name: Github
-        url: 'https://github.com/hackforla/adopt-civic-art'
-    location: Downtown
-    looking: ''
-    partner: County of Los Angeles
-    title: Art Watcher
-  - dek: >-
       We’re going to build an iOS and Android app that will tell you where and
       when you can park in the city—all based on your location. Come drive with
       us.
@@ -90,6 +52,44 @@ projects:
     title: Project Light The Way
     location: Downtown
     looking: 'Front-end Developers, UX Designers'
+  - dek: >-
+      Applying for work should be simple—but the application process for the
+      City of LA is confusing and cumbersome. We’re going to make it easier to
+      find the job of your dreams.
+    image: /images/uploads/project-workforla.jpg
+    links:
+      - name: Site
+        url: 'http://www.workfor.la/'
+    location: Downtown
+    looking: 'UX, Writers, Designers'
+    partner: Department of Personnel
+    title: Work for LA
+  - dek: >-
+      Everyone deserves access to healthy food. Help us make it easier for
+      Angelenos to find the best places to buy or grow healthy food in their
+      city.
+    image: /images/uploads/project-fola.jpg
+    links:
+      - name: Github
+        url: 'https://github.com/foodoasisla'
+      - name: Site
+        url: 'https://foodoasis.la/'
+    location: ''
+    looking: ''
+    partner: Youth Policy Institute
+    title: Food Oasis
+  - dek: >-
+      There are thousands of works of public art scattered around the city.
+      There should be one place to see where they are and how they’re doing.
+      We’re building it.
+    image: /images/uploads/project-art.jpg
+    links:
+      - name: Github
+        url: 'https://github.com/hackforla/adopt-civic-art'
+    location: Downtown
+    looking: ''
+    partner: County of Los Angeles
+    title: Art Watcher
 testimonial:
   image: /images/uploads/quote-garcetti.jpg
   quote: >-
@@ -130,6 +130,7 @@ sponsors:
     url: 'https://pivotal.io/labs'
 template: _templates/_home.pug
 ---
+
 
 
 
