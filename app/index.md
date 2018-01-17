@@ -47,12 +47,15 @@ projects:
     looking: 'Designers, iOS developers, Android developers, API developers (Node.js)'
     title: Curb Map
     location: Downtown
-  - image: /images/uploads/light-the-way.jpg
+  - dek: ''
+    image: /images/uploads/light-the-way.jpg
     links:
+      - name: Github
+        url: 'https://github.com/light-the-way'
       - {}
+    location: Downtown
     looking: 'Front-end Developers, UX Designers'
     title: Project Light The Way
-    location: Downtown
   - dek: >-
       Applying for work should be simple—but the application process for the
       City of LA is confusing and cumbersome. We’re going to make it easier to
@@ -131,6 +134,7 @@ sponsors:
     url: 'https://pivotal.io/labs'
 template: _templates/_home.pug
 ---
+
 
 
 
