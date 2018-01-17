@@ -86,7 +86,7 @@ projects:
     links:
       - name: Github
         url: 'https://github.com/hackforla/adopt-civic-art'
-    location: Downtown
+    location: ''
     looking: ''
     partner: County of Los Angeles
     title: Art Watcher
@@ -130,6 +130,7 @@ sponsors:
     url: 'https://pivotal.io/labs'
 template: _templates/_home.pug
 ---
+
 
 
 
