@@ -85,6 +85,11 @@ projects:
     looking: 'Designers, iOS developers, Android developers, API developers (Node.js)'
     title: Curb Map
     location: Downtown
+  - links:
+      - {}
+    title: Project Light The Way
+    location: Downtown
+    looking: 'Front-end Developers, UX Designers'
 testimonial:
   image: /images/uploads/quote-garcetti.jpg
   quote: >-
@@ -125,6 +130,7 @@ sponsors:
     url: 'https://pivotal.io/labs'
 template: _templates/_home.pug
 ---
+
 
 
 
