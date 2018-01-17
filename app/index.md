@@ -44,10 +44,10 @@ projects:
         url: 'https://github.com/foodoasisla'
       - name: Site
         url: 'https://foodoasis.la/'
-    looking: 'Java Developers, Designers, Writers'
-    partner: LA Food Policy Council
+    location: ''
+    looking: ''
+    partner: Youth Policy Institute
     title: Food Oasis
-    location: Downtown
   - dek: >-
       Applying for work should be simple—but the application process for the
       City of LA is confusing and cumbersome. We’re going to make it easier to
@@ -56,10 +56,10 @@ projects:
     links:
       - name: Site
         url: 'http://www.workfor.la/'
+    location: Downtown
     looking: 'UX, Writers, Designers'
     partner: Department of Personnel
     title: Work for LA
-    location: Downtown
   - dek: >-
       There are thousands of works of public art scattered around the city.
       There should be one place to see where they are and how they’re doing.
@@ -68,10 +68,10 @@ projects:
     links:
       - name: Github
         url: 'https://github.com/hackforla/adopt-civic-art'
+    location: Downtown
     looking: 'UX, Designers, Python'
     partner: ''
     title: Adopt-A-Civic Artwork
-    location: Downtown
   - dek: >-
       We’re going to build an iOS and Android app that will tell you where and
       when you can park in the city—all based on your location. Come drive with
@@ -125,6 +125,7 @@ sponsors:
     url: 'https://pivotal.io/labs'
 template: _templates/_home.pug
 ---
+
 
 
 
