@@ -92,7 +92,7 @@ projects:
     location: ''
     looking: ''
     partner: County of Los Angeles
-    title: Art Watcher
+    title: ArtWatcher
 testimonial:
   image: /images/uploads/quote-garcetti.jpg
   quote: >-
@@ -133,6 +133,7 @@ sponsors:
     url: 'https://pivotal.io/labs'
 template: _templates/_home.pug
 ---
+
 
 
 
