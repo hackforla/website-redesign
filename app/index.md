@@ -47,7 +47,8 @@ projects:
     looking: 'Designers, iOS developers, Android developers, API developers (Node.js)'
     title: Curb Map
     location: Downtown
-  - links:
+  - image: /images/uploads/benjamin-faust-8310.jpg
+    links:
       - {}
     title: Project Light The Way
     location: Downtown
@@ -130,6 +131,7 @@ sponsors:
     url: 'https://pivotal.io/labs'
 template: _templates/_home.pug
 ---
+
 
 
 
