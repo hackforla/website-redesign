@@ -94,11 +94,31 @@ import 'jquery.scrollto';
       return false;
     }
     $form.data('loading', true);
-    $.post($form.attr('action'), $form.serialize()).then(function() {
+    /* eslint-disable quote-props*/
+    // First we're going to submit the email signup to the Action Network API.
+    // Then we're going to submit the form to the Netlify form handler..
+    $.ajax({
+      url: 'https://actionnetwork.org/api/v2/people/',
+      type: 'POST',
+      data: JSON.stringify({
+        'person': {
+          'email_addresses': [{
+            'address': $form.find('[name="email"]').val()
+          }]
+        }
+      }),
+      headers: {
+        'OSDI-API-Token': '6ff91ed1255d1966758bf3449043077a',
+        'Content-Type': 'application/json'
+      },
+      dataType: 'json'
+    }).then(() => $.post($form.attr('action'), $form.serialize())
+    ).then(() => {
       $form.find('.form-confirmation').removeClass('hidden');
-    }).always(function() {
+    }).always(() => {
       $form.data('loading', false);
     });
+    /* eslint-enable quote-props*/
   });
 
   autosize($('textarea'));
