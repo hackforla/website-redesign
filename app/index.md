@@ -131,11 +131,12 @@ sponsors:
   - image: /images/uploads/logo-pivotal-labs.svg
     name: Pivotal Labs
     url: 'https://pivotal.io/labs'
-  - image: /images/uploads/hackerfund-logo-r.png
+  - image: /images/uploads/hackerfund-logo-r.svg
     name: Hacker Fund
     url: 'https://www.hacker.fund'
 template: _templates/_home.pug
 ---
+
 
 
 
