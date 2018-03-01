@@ -3,3 +3,4 @@ dist/
 .tmp
 app.yaml
 app/_includes/svg-sprites.svg
+package-lock.json

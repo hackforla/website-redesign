@@ -34,19 +34,6 @@ location:
       zip: '90401'
   title: Hack Nights - Every Tuesday & Wednesday
 projects:
-  - dek: >-
-      We’re going to build an iOS and Android app that will tell you where and
-      when you can park in the city—all based on your location. Come drive with
-      us.
-    image: /images/uploads/project-curb-map.jpg
-    links:
-      - name: Github
-        url: 'https://github.com/curbmap'
-      - name: Site
-        url: 'https://curbmap.com/'
-    looking: 'Designers, iOS developers, Android developers, API developers (Node.js)'
-    title: Curb Map
-    location: Downtown
   - dek: ''
     image: /images/uploads/light-the-way.jpg
     links:
@@ -93,6 +80,28 @@ projects:
     looking: ''
     partner: County of Los Angeles
     title: ArtWatcher
+  - dek: >-
+      We are building a platform to engage the community to map and update the city's parking restrictions. Simultaneously we want to create an app that is easy for all people (community members, visitors, etc.) to use to see the landscape of parking around themselves. We want to help you avoid endlessly searching for parking in all the wrong places and reduce your risk of getting tickets.
+    image: /images/uploads/project-curb-map.jpg
+    links:
+      - name: Github
+        url: 'https://github.com/curbmap'
+      - name: Site
+        url: 'https://curbmap.com/'
+    looking: 'UX designers, UX researchers, UI designers'
+    title: curbmap
+    location: Downtown
+  - dek: >-
+      Engage is a platform to stay up to date on your local issues, making it easy to get your voice heard.
+    image: /images/uploads/project-engage.jpg
+    links:
+      - name: Github
+        url: 'https://github.com/hackla-engage'
+      - name: Site
+        url: 'https://engage-santa-monica.herokuapp.com/'
+    looking: 'NLP engineers, Django developers (API), React developers, UX designers, anyone else...'
+    title: Engage
+    location: Santa Monica
 testimonial:
   image: /images/uploads/quote-garcetti.jpg
   quote: >-
