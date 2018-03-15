@@ -125,7 +125,7 @@ sponsors:
   - image: /images/uploads/logo-cfa.svg
     name: Code for America
     url: 'https://www.codeforamerica.org/'
-  - image: /images/uploads/logo-laci.svg
+  - image: /images/uploads/logo-laci-updated.svg
     name: Los Angeles Cleantech Incubator
     url: 'http://laincubator.org/'
   - image: /images/uploads/logo-pivotal-labs.svg
@@ -136,6 +136,7 @@ sponsors:
     url: 'https://www.hacker.fund'
 template: _templates/_home.pug
 ---
+
 
 
 
