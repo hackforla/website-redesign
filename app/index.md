@@ -39,6 +39,8 @@ projects:
     links:
       - name: Github
         url: 'https://github.com/light-the-way'
+      - name: Site
+        url: 'https://lighttheway.herokuapp.com/'
     location: Downtown
     looking: 'Front-end Developers, UX Designers'
     title: Project Light The Way
