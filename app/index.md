@@ -24,10 +24,10 @@ location:
       state: CA
       title: Downtown
       zip: '90013'
-    - address1: 'Pivotal Labs, Suite 200'
-      address2: 1333 2nd Street
+    - address1: 'Carbon Five'
+      address2: 525 Colorado Ave.
       city: Santa Monica
-      date: 'Wednesdays at 6:00 pm'
+      date: 'Mondays at 6:00 pm'
       image: /images/uploads/santa-monica.jpg
       state: CA
       title: Westside
@@ -139,9 +139,6 @@ sponsors:
   - image: /images/uploads/logo-laci-updated.svg
     name: Los Angeles Cleantech Incubator
     url: 'http://laincubator.org/'
-  - image: /images/uploads/logo-pivotal-labs.svg
-    name: Pivotal Labs
-    url: 'https://pivotal.io/labs'
   - image: /images/uploads/logo-hacker-fund.svg
     name: Hacker Fund
     url: 'https://www.hacker.fund'
