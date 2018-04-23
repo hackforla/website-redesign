@@ -32,7 +32,7 @@ location:
       state: CA
       title: Westside
       zip: '90401'
-  title: Hack Nights - Every Tuesday & Wednesday
+  title: Hack Nights - Every Monday & Tuesday
 projects:
   - dek: ''
     image: /images/uploads/light-the-way.jpg
