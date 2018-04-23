@@ -139,6 +139,9 @@ sponsors:
   - image: /images/uploads/logo-laci-updated.svg
     name: Los Angeles Cleantech Incubator
     url: 'http://laincubator.org/'
+  - image: /images/uploads/logo-carbon-five.jpg
+    name: Carbon Five
+    url: 'https://www.carbonfive.com/'
   - image: /images/uploads/logo-hacker-fund.svg
     name: Hacker Fund
     url: 'https://www.hacker.fund'
