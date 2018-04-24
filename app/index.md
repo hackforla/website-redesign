@@ -16,14 +16,6 @@ location:
     inclusive, diverse community, and everyone is welcome. Join an existing
     project team or pitch your own civic issue.
   locations:
-    - address1: 'La Kretz Innovation Center, Room 401'
-      address2: 525 S Hewitt St
-      city: Los Angeles
-      date: 'Tuesdays at 6:00 pm'
-      image: /images/uploads/la-kretz.jpg
-      state: CA
-      title: Downtown
-      zip: '90013'
     - address1: Carbon Five
       address2: 525 Colorado Ave.
       city: Santa Monica
@@ -32,6 +24,14 @@ location:
       state: CA
       title: Westside
       zip: '90401'
+    - address1: 'La Kretz Innovation Center, Room 401'
+      address2: 525 S Hewitt St
+      city: Los Angeles
+      date: 'Tuesdays at 6:00 pm'
+      image: /images/uploads/la-kretz.jpg
+      state: CA
+      title: Downtown
+      zip: '90013'
   title: Hack Nights - Every Monday & Tuesday
 projects:
   - dek: ''
@@ -155,6 +155,7 @@ sponsors:
     url: 'https://www.hacker.fund'
 template: _templates/_home.pug
 ---
+
 
 
 
