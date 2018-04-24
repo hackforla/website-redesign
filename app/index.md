@@ -24,7 +24,7 @@ location:
       state: CA
       title: Downtown
       zip: '90013'
-    - address1: 'Carbon Five'
+    - address1: Carbon Five
       address2: 525 Colorado Ave.
       city: Santa Monica
       date: 'Mondays at 6:00 pm'
@@ -32,7 +32,7 @@ location:
       state: CA
       title: Westside
       zip: '90401'
-  title: Hack Nights - Every Tuesday & Wednesday
+  title: Hack Nights - Every Monday & Tuesday
 projects:
   - dek: ''
     image: /images/uploads/light-the-way.jpg
@@ -83,7 +83,12 @@ projects:
     partner: County of Los Angeles
     title: ArtWatcher
   - dek: >-
-      We are building a platform to engage the community to map and update the city's parking restrictions. Simultaneously we want to create an app that is easy for all people (community members, visitors, etc.) to use to see the landscape of parking around themselves. We want to help you avoid endlessly searching for parking in all the wrong places and reduce your risk of getting tickets.
+      We are building a platform to engage the community to map and update the
+      city's parking restrictions. Simultaneously we want to create an app that
+      is easy for all people (community members, visitors, etc.) to use to see
+      the landscape of parking around themselves. We want to help you avoid
+      endlessly searching for parking in all the wrong places and reduce your
+      risk of getting tickets.
     image: /images/uploads/project-curb-map.jpg
     links:
       - name: Github
@@ -94,14 +99,17 @@ projects:
     title: curbmap
     location: Downtown
   - dek: >-
-      Engage is a platform to stay up to date on your local issues, making it easy to get your voice heard.
+      Engage is a platform to stay up to date on your local issues, making it
+      easy to get your voice heard.
     image: /images/uploads/project-engage.jpg
     links:
       - name: Github
         url: 'https://github.com/hackla-engage'
       - name: Site
         url: 'https://engage-santa-monica.herokuapp.com/'
-    looking: 'NLP engineers, Django developers (API), React developers, UX designers, anyone else...'
+    looking: >-
+      NLP engineers, Django developers (API), React developers, UX designers,
+      anyone else...
     title: Engage
     location: Santa Monica
 testimonial:
@@ -147,6 +155,7 @@ sponsors:
     url: 'https://www.hacker.fund'
 template: _templates/_home.pug
 ---
+
 
 
 
