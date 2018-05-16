@@ -140,7 +140,15 @@ import 'jquery.scrollto';
       },
       dataType: 'json'
     })
-      .then(() => $.post($form.attr('action'), $form.serialize()))
+      .then(() => {
+        let dfd = new $.Deferred();
+        if ($form.attr('action')) {
+          dfd = $.post($form.attr('action'), $form.serialize());
+        } else {
+          dfd.resolve();
+        }
+        return dfd;
+      })
       .then(() => {
         $form.find('.form-confirmation').removeClass('hidden');
         $form.find('input, textarea').val('');
