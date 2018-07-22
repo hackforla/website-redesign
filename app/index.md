@@ -133,12 +133,7 @@ press:
     url: >-
       http://www.govtech.com/dc/articles/March-4-Declared-Open-Data-Day-in-Los-Angeles-Cities-Worldwide.html
 about:
-  dek: >-
-    Hack for LA is the official Los Angeles chapter of Code for America, a
-    national nonprofit that believes government can work for the people, by the
-    people, in the 21st century. We bring together coders, designers,
-    entrepreneurs, students, government staff, activists, and other civic-minded
-    people to solve the LA region’s biggest challenges.
+  dek: "Hack for LA is a project group of [Hacker Fund](https://www.hacker.fund)\_and the Los Angeles chapter of [Code for America](https://www.codeforamerica.com). We bring together coders, designers, entrepreneurs, students, government staff, activists, and other civic-minded people to solve the LA region’s biggest challenges."
   title: Want to know more about Hack for LA?
 sponsors:
   - image: /images/uploads/logo-cfa.svg
@@ -155,6 +150,7 @@ sponsors:
     url: 'https://www.hacker.fund'
 template: _templates/_home.pug
 ---
+
 
 
 
