@@ -1,7 +1,4 @@
 # Hack for L.A. Redesign
-
-> **HEY!** Thankis for contributing. We're redesigning the redesign. This is officially the legacy version of the site as we are migrating the project to a VueJS/Nuxt stack. Check out the [hackforla/website](https://github.com/hackforla/website) repo to get involved with that.
-
 ## Table of Contents
 * [Building the Project](#build)
 * [Deployment](#deploy)
