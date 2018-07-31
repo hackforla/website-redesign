@@ -1,3 +1,5 @@
+> **HEY THERE!** Thanks for contributing. This project has moved to the [hackforla/website](https://github.com/hackforla/website) repo, though many of the existing issues here are still relevant so feel free to pitch in and make pull requests to that repo.
+
 # Hack for L.A. Redesign
 ## Table of Contents
 * [Building the Project](#build)
